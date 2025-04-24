@@ -1,0 +1,27 @@
+.DS_Store
+.env.local
+.eslintcache
+.expo/
+.metro-health-check*
+*.jks
+*.key
+*.mobileprovision
+*.orig.*
+*.p12
+*.p8
+*.swp
+android
+credentials.json
+dist/
+expo-env.d.ts
+ios
+node_modules/
+npm-debug.*
+tsconfig.tsbuildinfo
+web-build/
+
+# fbtee
+.enum_manifest.json
+.source_strings.json
+.src_manifest.json
+src/translations/

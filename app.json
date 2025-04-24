@@ -1,0 +1,60 @@
+{
+  "expo": {
+    "name": "NKZW App",
+    "slug": "nkzw-app",
+    "version": "1.0.0",
+    "scheme": "nkzw-app",
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-dev-launcher",
+        {
+          "launchMode": "most-recent"
+        }
+      ],
+      "expo-localization",
+      "expo-font",
+      "expo-web-browser",
+      "react-native-edge-to-edge"
+    ],
+    "experiments": {
+      "reactCompiler": true,
+      "tsconfigPaths": true,
+      "typedRoutes": true
+    },
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "app.nkzw.www",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "app.nkzw.www"
+    },
+    "newArchEnabled": true,
+    "extra": {
+      "router": {
+        "origin": false
+      }
+    }
+  }
+}

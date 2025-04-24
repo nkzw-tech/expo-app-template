@@ -1,0 +1,95 @@
+{
+  "fb-locale": "ja_JP",
+  "translations": {
+    "UlDdQS10S2ZoiDzl5NopHg==": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "ホーム",
+          "variations": []
+        }
+      ]
+    },
+    "D3/NjeAAjEGGNX8v0HM2dA==": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "ホーム",
+          "variations": []
+        }
+      ]
+    },
+    "y7ytpzjv1/Y+s3HivTUHMQ==": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "ようこそ",
+          "variations": []
+        }
+      ]
+    },
+    "EzI08DzuAz+m8GpFANRzGg==": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "モダンで、賢明なデフォルト、高速。",
+          "variations": []
+        }
+      ]
+    },
+    "0aaRPLpuUIudmtHBdXuxvQ==": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "ライブ更新が反映されるように、{=src/app/(app)/(tabs)/index.tsx} を変更してください。",
+          "variations": []
+        }
+      ]
+    },
+    "F3p8DbdliugG4CTKslAYqA==": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "ログイン",
+          "variations": []
+        }
+      ]
+    },
+    "PkKwcnNiHG2aiPl+1FyNPw==": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "ログアウト",
+          "variations": []
+        }
+      ]
+    },
+    "lHXO08CtjrF6j/7VvIlkRQ==": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "ログアウト",
+          "variations": []
+        }
+      ]
+    },
+    "9wXUM5wXf6pOsxVkd/dkTw==": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "二",
+          "variations": []
+        }
+      ]
+    }
+  }
+}

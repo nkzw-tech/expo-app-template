@@ -1,0 +1,16 @@
+diff --git a/src/lib/logToConsole.js b/src/lib/logToConsole.js
+index 5a51d4ba0bb6cc26cc880f666c29b015acd6eeee..28c67b88624b0fed01338b172416a78dde023778 100644
+--- a/src/lib/logToConsole.js
++++ b/src/lib/logToConsole.js
+@@ -39,10 +39,8 @@ module.exports = (terminal, level, mode, ...data) => {
+     if (typeof lastItem === "string") {
+       data[data.length - 1] = lastItem.trimEnd();
+     }
+-    const modePrefix =
+-      !mode || mode == "BRIDGE" ? "" : `(${mode.toUpperCase()}) `;
+     terminal.log(
+-      color.bold(` ${modePrefix}${logFunction.toUpperCase()} `) +
++      color.bold(` ${logFunction.toUpperCase()} `) +
+         "".padEnd(groupStack.length * 2, " "),
+       util.format(...data)
+     );

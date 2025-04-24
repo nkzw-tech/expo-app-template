@@ -1,0 +1,12 @@
+__generated__
+.enum_manifest.json
+.expo/
+.source_strings.json
+.src_manifest.json
+android
+coverage
+dist/
+ios
+patches/
+pnpm-lock.yaml
+web-build/

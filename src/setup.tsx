@@ -3,7 +3,7 @@ import getLocale, {
   getTranslationsObject,
   setClientLocale,
 } from './i18n/getLocale.tsx';
-import ja_JP from './translations/ja_JP.json' with { type: 'json' };
+import ja_JP from '../translations/ja_JP.json' with { type: 'json' };
 
 setupFbtee({
   hooks: {

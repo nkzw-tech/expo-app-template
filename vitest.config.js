@@ -6,12 +6,10 @@ import reactNative from 'vitest-react-native';
 export default {
   plugins: [
     reactNative(),
-    react(
-      react({
-        babel: {
-          presets: [fbteePreset],
-        },
-      }),
-    ),
+    react({
+      babel: {
+        presets: [fbteePreset],
+      },
+    }),
   ],
 };

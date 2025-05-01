@@ -19,8 +19,6 @@ You have to make a lot of decisions and install tons of packages every time you 
 - [pnpm](https://pnpm.io/)
 - **ESM:** _It's 2025._ This template comes with `"type": "module"`.
 
-_Note: This is a bleeding edge template as of May 2025. If you start building an app with this template today, we'll update everything to fully stable versions by the time you ship._
-
 ## Getting Started
 
 Start here: [Create a new app using this template](https://github.com/new?template_name=expo-app-template&template_owner=nkzw-tech).

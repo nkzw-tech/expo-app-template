@@ -23,6 +23,7 @@
       "react-native-edge-to-edge"
     ],
     "experiments": {
+      "reactCanary": true,
       "reactCompiler": true,
       "tsconfigPaths": true,
       "typedRoutes": true

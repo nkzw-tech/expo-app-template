@@ -89,8 +89,7 @@
       ]
     },
     "patchedDependencies": {
-      "metro": "patches/metro.patch",
-      "react-native": "patches/react-native.patch"
+      "metro": "patches/metro.patch"
     },
     "ignorePatchFailures": false
   }

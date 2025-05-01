@@ -10,8 +10,8 @@ This is the most modern and always up-to-date React Native & Expo app template. 
 You have to make a lot of decisions and install tons of packages every time you create a new React Native app. This template offers an opinionated starting point and includes the best options for various categories. Instead of spending hours on research and piecing together a setup that works, you can just copy this template and start right away. When you copy this template, you get full control to add or remove any third-party package to customize your app.
 
 - Expo 53 & React Native 0.79 with the New Architecture.
-- [Expo App Router](https://docs.expo.dev/router/introduction/)
-- [Nativewind](https://www.nativewind.dev/) & [Tailwind](https://tailwindcss.com/)
+- [Expo Router](https://docs.expo.dev/router/introduction/)
+- [NativeWind](https://www.nativewind.dev/) & [Tailwind CSS](https://tailwindcss.com/)
 - [`@gorhom/bottom-sheet`](https://github.com/gorhom/react-native-bottom-sheet), [Legend List](https://github.com/LegendApp/legend-list), [`react-native-svg`](https://github.com/software-mansion/react-native-svg) (+ `react-native-svg-transformer`), [`expo-linear-gradient`](https://docs.expo.dev/versions/latest/sdk/linear-gradient/).
 - [`fbtee`](https://github.com/nkzw-tech/fbtee) for i18n.
 - [TypeScript](https://www.typescriptlang.org)

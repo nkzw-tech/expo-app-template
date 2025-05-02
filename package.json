@@ -18,7 +18,7 @@
     "lint:format": "prettier --cache --check .",
     "lint": "eslint --cache .",
     "prebuild": "expo prebuild",
-    "preinstall": "command -v git >/dev/null 2>&1 && git config core.hooksPath git-hooks || true",
+    "preinstall": "command -v git >/dev/null 2>&1 && git config core.hooksPath git-hooks || exit 0",
     "start": "expo start --dev-client",
     "test": "npm-run-all --parallel tsc:check vitest:run lint lint:format",
     "tsc:check": "tsc",

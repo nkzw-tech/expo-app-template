@@ -58,7 +58,7 @@ export default [
           ],
         },
       ],
-      'import/no-extraneous-dependencies': [
+      'import-x/no-extraneous-dependencies': [
         2,
         {
           devDependencies: [
@@ -72,7 +72,7 @@ export default [
       ],
     },
     settings: {
-      'import/resolver': {
+      'import-x/resolver': {
         typescript: {
           project: './tsconfig.json',
         },

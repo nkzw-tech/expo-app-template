@@ -25,6 +25,11 @@
     "experiments": {
       "reactCanary": true,
       "reactCompiler": true,
+      "remoteBuildCache": {
+        "provider": {
+          "plugin": "expo-build-disk-cache"
+        }
+      },
       "tsconfigPaths": true,
       "typedRoutes": true
     },

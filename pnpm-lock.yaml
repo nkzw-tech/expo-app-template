@@ -134,6 +134,9 @@ importers:
       eslint:
         specifier: ^9.26.0
         version: 9.26.0(jiti@1.21.7)
+      expo-build-disk-cache:
+        specifier: ^0.2.0
+        version: 0.2.0(typescript@5.8.3)
       npm-run-all2:
         specifier: ^8.0.1
         version: 8.0.1
@@ -1887,6 +1890,9 @@ packages:
     resolution: {integrity: sha512-2WALfTl4xo2SkGCYRt6rDTFfk9R1czmBvUQy12gK2KuRKIpWEhcbbzy8EZXtz/jkRqHX8bFEc6FC1HjX4TUWYw==}
     engines: {node: '>=10.0.0'}
 
+  '@zod/core@0.11.6':
+    resolution: {integrity: sha512-03Bv82fFSfjDAvMfdHHdGSS6SOJs0iCcJlWJv1kJHRtoTT02hZpyip/2Lk6oo4l4FtjuwTrsEQTwg/LD8I7dJA==}
+
   abort-controller@3.0.0:
     resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
     engines: {node: '>=6.5'}
@@ -2405,6 +2411,15 @@ packages:
       typescript:
         optional: true
 
+  cosmiconfig@9.0.0:
+    resolution: {integrity: sha512-itvL5h8RETACmOTFc4UfIyB2RfEHi71Ax6E/PivVxq9NseKbOWpeyHEOIbmAw1rs8Ak0VursQNww7lf7YtUwzg==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      typescript: '>=4.9.5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   cross-fetch@3.2.0:
     resolution: {integrity: sha512-Q+xVJLoGOeIMXZmbUK4HYk+69cQH6LudR0Vu/pRm2YlU/hDV9CiS0gKUMaWY5f2NeUH9C1nV3bsTlCo0FsTV1Q==}
 
@@ -2625,6 +2640,14 @@ packages:
   env-editor@0.4.2:
     resolution: {integrity: sha512-ObFo8v4rQJAE59M69QzwloxPZtd33TpYEIjtKD1rrFDcM1Gd7IkDxEBU+HriziN6HSHQnBJi8Dmy+JWkav5HKA==}
     engines: {node: '>=8'}
+
+  env-paths@2.2.1:
+    resolution: {integrity: sha512-+h1lkLKhZMTYjog1VEpJNG7NZJWcuc2DDk/qsqSTRRCOXiLjeQ1d1/udrUGhqMxUgAlwKNZ0cf2uqan5GLuS2A==}
+    engines: {node: '>=6'}
+
+  env-paths@3.0.0:
+    resolution: {integrity: sha512-dtJUTepzMW3Lm/NPxRf3wP4642UWhjL2sQxc+ym2YMj1m/H2zDNQOlezafzkHwn6sMstjHTwG6iQQsctDW/b1A==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
   error-ex@1.3.2:
     resolution: {integrity: sha512-7dFHNmqeFSEt2ZBsCriorKnn3Z2pj+fd9kmI6QoWw4//DL+icEBfc0U7qJCisqrTsKTjw4fNFy2pW9OqStD84g==}
@@ -2896,6 +2919,10 @@ packages:
       expo: '*'
       react: '*'
       react-native: '*'
+
+  expo-build-disk-cache@0.2.0:
+    resolution: {integrity: sha512-bJFKQnfBUxgDgnSDAq3/Xue9edK7lEzJtNM9SvnkbhF70tDWrGXbG4G7tF/+tCOaknO2aKSKuhIEhLOKt2G/+Q==}
+    engines: {node: '>=18.0.0'}
 
   expo-constants@17.1.6:
     resolution: {integrity: sha512-q5mLvJiLtPcaZ7t2diSOlQ2AyxIO8YMVEJsEfI/ExkGj15JrflNQ7CALEW6IF/uNae/76qI/XcjEuuAyjdaCNw==}
@@ -5735,6 +5762,9 @@ packages:
   zod@3.24.4:
     resolution: {integrity: sha512-OdqJE9UDRPwWsrHjLN2F8bPxvwJBK22EHLWtanu0LSYr5YqzsaaW3RMgmjwr8Rypg5k+meEJdSPXJZXE/yqOMg==}
 
+  zod@4.0.0-beta.20250505T195954:
+    resolution: {integrity: sha512-iB8WvxkobVIXMARvQu20fKvbS7mUTiYRpcD8OQV1xjRhxO0EEpYIRJBk6yfBzHAHEdOSDh3SxDITr5Eajr2vtg==}
+
 snapshots:
 
   '@0no-co/graphql.web@1.1.2(graphql@16.10.0)':
@@ -7795,6 +7825,8 @@ snapshots:
 
   '@xmldom/xmldom@0.8.10': {}
 
+  '@zod/core@0.11.6': {}
+
   abort-controller@3.0.0:
     dependencies:
       event-target-shim: 5.0.1
@@ -8414,6 +8446,15 @@ snapshots:
     optionalDependencies:
       typescript: 5.8.3
 
+  cosmiconfig@9.0.0(typescript@5.8.3):
+    dependencies:
+      env-paths: 2.2.1
+      import-fresh: 3.3.1
+      js-yaml: 4.1.0
+      parse-json: 5.2.0
+    optionalDependencies:
+      typescript: 5.8.3
+
   cross-fetch@3.2.0:
     dependencies:
       node-fetch: 2.7.0
@@ -8603,6 +8644,10 @@ snapshots:
   entities@4.5.0: {}
 
   env-editor@0.4.2: {}
+
+  env-paths@2.2.1: {}
+
+  env-paths@3.0.0: {}
 
   error-ex@1.3.2:
     dependencies:
@@ -9060,6 +9105,16 @@ snapshots:
       react-native: 0.79.2(@babel/core@7.27.1)(@types/react@19.1.3)(react@19.1.0)
     transitivePeerDependencies:
       - supports-color
+
+  expo-build-disk-cache@0.2.0(typescript@5.8.3):
+    dependencies:
+      '@expo/config': 11.0.10
+      cosmiconfig: 9.0.0(typescript@5.8.3)
+      env-paths: 3.0.0
+      zod: 4.0.0-beta.20250505T195954
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
 
   expo-constants@17.1.6(expo@53.0.9(@babel/core@7.27.1)(@expo/metro-runtime@5.0.4(react-native@0.79.2(@babel/core@7.27.1)(@types/react@19.1.3)(react@19.1.0)))(babel-plugin-react-compiler@19.1.0-rc.1)(graphql@16.10.0)(react-native@0.79.2(@babel/core@7.27.1)(@types/react@19.1.3)(react@19.1.0))(react@19.1.0))(react-native@0.79.2(@babel/core@7.27.1)(@types/react@19.1.3)(react@19.1.0)):
     dependencies:
@@ -12177,3 +12232,7 @@ snapshots:
       zod: 3.24.4
 
   zod@3.24.4: {}
+
+  zod@4.0.0-beta.20250505T195954:
+    dependencies:
+      '@zod/core': 0.11.6

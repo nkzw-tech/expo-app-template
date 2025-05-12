@@ -20,7 +20,7 @@
     "lint:format": "prettier --cache --check .",
     "prebuild": "expo prebuild",
     "start": "expo start --dev-client",
-    "test": "npm-run-all --parallel tsc:check vitest:run lint lint:format",
+    "test": "NODE_OPTIONS='--no-experimental-detect-module' npm-run-all --parallel tsc:check vitest:run lint lint:format",
     "tsc:check": "tsc",
     "vitest:run": "vitest run",
     "web": "expo start --web"

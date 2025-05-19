@@ -9,7 +9,7 @@
     "dev": "expo start",
     "dev:setup": "pnpm fbtee",
     "fbtee": "pnpm run fbtee:manifest && pnpm run fbtee:collect && pnpm run fbtee:translate",
-    "fbtee:collect": "fbtee collect --manifest < .src_manifest.json > .source_strings.json",
+    "fbtee:collect": "fbtee collect --manifest < .src_manifest.json > source_strings.json",
     "fbtee:manifest": "fbtee manifest --src src",
     "fbtee:translate": "fbtee translate --translations translations/*.json --jenkins --output-dir src/translations/",
     "format": "prettier --write .",

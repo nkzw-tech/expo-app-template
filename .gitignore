@@ -22,6 +22,6 @@ web-build/
 
 # fbtee
 .enum_manifest.json
-.source_strings.json
 .src_manifest.json
+source_strings.json
 src/translations/

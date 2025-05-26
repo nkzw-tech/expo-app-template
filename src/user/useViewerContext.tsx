@@ -81,8 +81,8 @@ const [ViewerContext, useViewerContext] = createContextHook(() => {
 
   return {
     isAuthenticated: !!user,
-    localSettings,
     locale,
+    localSettings,
     login,
     logout,
     setLocale,

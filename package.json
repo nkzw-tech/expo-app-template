@@ -25,10 +25,6 @@
     "vitest:run": "vitest run",
     "web": "expo start --web"
   },
-  "eslintConfig": {
-    "extends": "universe/native",
-    "root": true
-  },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",
     "@gorhom/bottom-sheet": "^5.1.5",

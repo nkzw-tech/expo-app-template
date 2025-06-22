@@ -2,7 +2,6 @@ import createContextHook from '@nkzw/create-context-hook';
 import UntypedAsyncStorage from '@react-native-async-storage/async-storage';
 import { useRouter } from 'expo-router';
 import { useCallback, useState } from 'react';
-import getLocale, { setClientLocale } from 'src/i18n/getLocale.tsx';
 
 // The type of AsyncStorage is not correctly exported when using `"type": "module"` 🤷‍♂️.
 const AsyncStorage = UntypedAsyncStorage as unknown as Readonly<{
@@ -35,13 +34,6 @@ const [ViewerContext, useViewerContext] = createContextHook(() => {
   );
 
   const user = viewerContext?.user;
-
-  const [locale, _setLocale] = useState(getLocale);
-
-  const setLocale = useCallback((locale: string) => {
-    setClientLocale(locale, async () => ({}));
-    _setLocale(locale);
-  }, []);
 
   const [localSettings, setLocalSettings] =
     useState<LocalSettings>(initialLocalSettings);
@@ -81,11 +73,9 @@ const [ViewerContext, useViewerContext] = createContextHook(() => {
 
   return {
     isAuthenticated: !!user,
-    locale,
     localSettings,
     login,
     logout,
-    setLocale,
     updateLocalSettings,
     user,
   };

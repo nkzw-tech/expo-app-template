@@ -1,12 +1,10 @@
 import _AntDesign from '@expo/vector-icons/AntDesign.js';
 import { Tabs } from 'expo-router';
-import { fbs } from 'fbtee';
+import { fbs, useLocaleContext } from 'fbtee';
 import { FC } from 'react';
 import { Pressable, View } from 'react-native';
-import getLocale from 'src/i18n/getLocale.tsx';
 import colors from 'src/ui/colors.ts';
 import Text from 'src/ui/Text.tsx';
-import useViewerContext from 'src/user/useViewerContext.tsx';
 
 // Types in `@expo/vector-icons` do not currently work correctly in `"type": "module"` packages.
 const AntDesign = _AntDesign as unknown as FC<{
@@ -16,7 +14,7 @@ const AntDesign = _AntDesign as unknown as FC<{
 }>;
 
 export default function TabLayout() {
-  const { locale, setLocale } = useViewerContext();
+  const { locale, setLocale } = useLocaleContext();
 
   return (
     <Tabs
@@ -41,7 +39,7 @@ export default function TabLayout() {
                     opacity: pressed ? 0.5 : 1,
                   }}
                 >
-                  <Text>{getLocale().split('_')[0]}</Text>
+                  <Text>{locale.split('_')[0]}</Text>
                 </View>
               )}
             </Pressable>

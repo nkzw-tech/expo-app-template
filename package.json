@@ -7,7 +7,7 @@
   "scripts": {
     "android": "expo run:android",
     "dev": "expo start",
-    "dev:setup": "pnpm fbtee",
+    "dev:setup": "pnpm relay && pnpm fbtee",
     "fbtee": "pnpm run fbtee:manifest && pnpm run fbtee:collect && pnpm run fbtee:translate",
     "fbtee:collect": "fbtee collect --manifest < .src_manifest.json > source_strings.json",
     "fbtee:manifest": "fbtee manifest --src src",
@@ -19,6 +19,7 @@
     "lint": "eslint --cache .",
     "lint:format": "prettier --experimental-cli --cache --check .",
     "prebuild": "expo prebuild",
+    "relay": "pnpm relay-compiler",
     "start": "expo start --dev-client",
     "test": "NODE_OPTIONS='--no-experimental-detect-module' npm-run-all --parallel tsc:check vitest:run lint lint:format",
     "tsc:check": "tsc",
@@ -56,7 +57,9 @@
     "react-native-safe-area-context": "^5.5.0",
     "react-native-screens": "4.11.1",
     "react-native-svg": "^15.12.0",
-    "react-native-web": "~0.20.0"
+    "react-native-web": "~0.20.0",
+    "react-relay": "^20.0.0",
+    "relay-runtime": "^20.0.0"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.4.2",
@@ -66,7 +69,10 @@
     "@prettier/plugin-oxc": "^0.0.4",
     "@react-native/metro-babel-transformer": "^0.79.4",
     "@types/react": "~19.1.8",
+    "@types/react-relay": "^18.2.1",
+    "@types/relay-runtime": "^19.0.2",
     "@vitejs/plugin-react": "^4.6.0",
+    "babel-plugin-relay": "^20.0.0",
     "eslint": "^9.29.0",
     "expo-build-disk-cache": "^0.5.0",
     "npm-run-all2": "^8.0.4",
@@ -74,6 +80,7 @@
     "prettier-plugin-packagejson": "^2.5.15",
     "prettier-plugin-tailwindcss": "^0.6.13",
     "react-native-svg-transformer": "^1.5.1",
+    "relay-compiler": "^20.0.0",
     "tailwindcss": "^3.4.0",
     "typescript": "^5.8.3",
     "vitest": "^3.2.4",

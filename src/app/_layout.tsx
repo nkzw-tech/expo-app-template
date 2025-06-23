@@ -4,6 +4,8 @@ import { Slot } from 'expo-router';
 import { LocaleContext } from 'fbtee';
 import { View } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { RelayEnvironmentProvider } from 'react-relay';
+import { Environment, FetchFunction, Network } from 'relay-runtime';
 import { ViewerContext } from 'src/user/useViewerContext.tsx';
 import ja_JP from '../translations/ja_JP.json' with { type: 'json' };
 
@@ -24,6 +26,26 @@ const loadLocale = async (locale: string) => {
   return {};
 };
 
+const HTTP_ENDPOINT = 'https://graphql.org/graphql/';
+
+const fetchGraphQL: FetchFunction = async (request, variables) => {
+  const response = await fetch(HTTP_ENDPOINT, {
+    body: JSON.stringify({ query: request.text, variables }),
+    headers: { 'Content-Type': 'application/json' },
+    method: 'POST',
+  });
+
+  if (!response.ok) {
+    throw new Error('Response failed.');
+  }
+
+  return await response.json();
+};
+
+const environment = new Environment({
+  network: Network.create(fetchGraphQL),
+});
+
 export default function RootLayout() {
   return (
     <LocaleContext
@@ -32,11 +54,13 @@ export default function RootLayout() {
       loadLocale={loadLocale}
     >
       <ViewerContext>
-        <GestureHandlerRootView>
-          <View className="flex-column flex-1 p-0">
-            <Slot />
-          </View>
-        </GestureHandlerRootView>
+        <RelayEnvironmentProvider environment={environment}>
+          <GestureHandlerRootView>
+            <View className="flex-column flex-1 p-0">
+              <Slot />
+            </View>
+          </GestureHandlerRootView>
+        </RelayEnvironmentProvider>
       </ViewerContext>
     </LocaleContext>
   );

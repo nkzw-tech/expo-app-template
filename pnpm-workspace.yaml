@@ -1,0 +1,12 @@
+onlyBuiltDependencies:
+  - esbuild
+  - unrs-resolver
+
+updateConfig:
+  ignoreDependencies:
+    - tailwindcss
+
+patchedDependencies:
+  metro: patches/metro.patch
+
+ignorePatchFailures: true

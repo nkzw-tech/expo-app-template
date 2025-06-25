@@ -20,6 +20,8 @@ You have to make a lot of decisions and install tons of packages every time you 
 - **ESM:** _It's 2025._ This template comes with `"type": "module"`.
 - _(Optional)_ [Relay](https://relay.dev/) for data fetching -> check out the [`with-relay` branch](https://github.com/nkzw-tech/expo-app-template/tree/with-relay).
 
+Check out the [`nkzw-tech/server-template`](https://github.com/nkzw-tech/server-template) for a GraphQL based server with Pothos and Prisma, or the [`nkzw-tech/web-app-template`](https://github.com/nkzw-tech/web-app-template) for building web apps.
+
 ## Getting Started
 
 Start here: [Create a new app using this template](https://github.com/new?template_name=expo-app-template&template_owner=nkzw-tech).

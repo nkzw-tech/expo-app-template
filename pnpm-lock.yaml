@@ -55,9 +55,6 @@ importers:
       expo-font:
         specifier: ^13.3.1
         version: 13.3.1(expo@53.0.12(@babel/core@7.27.4)(@expo/metro-runtime@5.0.4(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.1.8)(react@19.1.0)))(babel-plugin-react-compiler@19.1.0-rc.2)(graphql@16.10.0)(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react@19.1.0)
-      expo-linear-gradient:
-        specifier: ^14.1.5
-        version: 14.1.5(expo@53.0.12(@babel/core@7.27.4)(@expo/metro-runtime@5.0.4(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.1.8)(react@19.1.0)))(babel-plugin-react-compiler@19.1.0-rc.2)(graphql@16.10.0)(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)
       expo-linking:
         specifier: ~7.1.5
         version: 7.1.5(expo@53.0.12(@babel/core@7.27.4)(@expo/metro-runtime@5.0.4(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.1.8)(react@19.1.0)))(babel-plugin-react-compiler@19.1.0-rc.2)(graphql@16.10.0)(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)
@@ -3012,13 +3009,6 @@ packages:
     peerDependencies:
       expo: '*'
       react: '*'
-
-  expo-linear-gradient@14.1.5:
-    resolution: {integrity: sha512-BSN3MkSGLZoHMduEnAgfhoj3xqcDWaoICgIr4cIYEx1GcHfKMhzA/O4mpZJ/WC27BP1rnAqoKfbclk1eA70ndQ==}
-    peerDependencies:
-      expo: '*'
-      react: '*'
-      react-native: '*'
 
   expo-linking@7.1.5:
     resolution: {integrity: sha512-8g20zOpROW78bF+bLI4a3ZWj4ntLgM0rCewKycPL0jk9WGvBrBtFtwwADJgOiV1EurNp3lcquerXGlWS+SOQyA==}
@@ -8970,12 +8960,6 @@ snapshots:
     dependencies:
       expo: 53.0.12(@babel/core@7.27.4)(@expo/metro-runtime@5.0.4(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.1.8)(react@19.1.0)))(babel-plugin-react-compiler@19.1.0-rc.2)(graphql@16.10.0)(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)
       react: 19.1.0
-
-  expo-linear-gradient@14.1.5(expo@53.0.12(@babel/core@7.27.4)(@expo/metro-runtime@5.0.4(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.1.8)(react@19.1.0)))(babel-plugin-react-compiler@19.1.0-rc.2)(graphql@16.10.0)(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0):
-    dependencies:
-      expo: 53.0.12(@babel/core@7.27.4)(@expo/metro-runtime@5.0.4(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.1.8)(react@19.1.0)))(babel-plugin-react-compiler@19.1.0-rc.2)(graphql@16.10.0)(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)
-      react: 19.1.0
-      react-native: 0.79.4(@babel/core@7.27.4)(@types/react@19.1.8)(react@19.1.0)
 
   expo-linking@7.1.5(expo@53.0.12(@babel/core@7.27.4)(@expo/metro-runtime@5.0.4(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.1.8)(react@19.1.0)))(babel-plugin-react-compiler@19.1.0-rc.2)(graphql@16.10.0)(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react-native@0.79.4(@babel/core@7.27.4)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0):
     dependencies:

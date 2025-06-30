@@ -1,15 +1,15 @@
-import { View } from 'react-native';
 import Text from 'src/ui/Text.tsx';
 import useViewerContext from 'src/user/useViewerContext.tsx';
+import Stack from '@nkzw/stack';
 
 export default function Two() {
   const { logout } = useViewerContext();
 
   return (
-    <View className="flex-column flex-1 p-4">
+    <Stack flex1 padding={16} vertical>
       <Text onPress={logout}>
         <fbt desc="Two header title">Logout</fbt>
       </Text>
-    </View>
+    </Stack>
   );
 }

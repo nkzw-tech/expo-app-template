@@ -2,10 +2,10 @@ import 'global.css';
 import { getLocales } from 'expo-localization';
 import { Slot } from 'expo-router';
 import { LocaleContext } from 'fbtee';
-import { View } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { ViewerContext } from 'src/user/useViewerContext.tsx';
 import ja_JP from '../translations/ja_JP.json' with { type: 'json' };
+import Stack from '@nkzw/stack';
 
 export const unstable_settings = {
   initialRouteName: '(app)',
@@ -33,9 +33,9 @@ export default function RootLayout() {
     >
       <ViewerContext>
         <GestureHandlerRootView>
-          <View className="flex-column flex-1 p-0">
+          <Stack flex1 vertical>
             <Slot />
-          </View>
+          </Stack>
         </GestureHandlerRootView>
       </ViewerContext>
     </LocaleContext>

@@ -28,6 +28,9 @@ importers:
       '@nkzw/create-context-hook':
         specifier: ^1.1.0
         version: 1.1.0(react@19.1.0)
+      '@nkzw/stack':
+        specifier: ^2.0.1
+        version: 2.0.1(nativewind@4.1.23(react-native-reanimated@3.18.0(@babel/core@7.27.7)(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react-native-safe-area-context@5.5.0(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react-native-svg@15.12.0(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)(tailwindcss@3.4.17))(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)
       '@react-native-async-storage/async-storage':
         specifier: ^2.2.0
         version: 2.2.0(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))
@@ -1293,6 +1296,18 @@ packages:
     resolution: {integrity: sha512-IoU8kOqHfnf7se2dGxMD/7RPm6WVjzjOjWSo7FulRx3lJzuZvXioSkT5Nd82l66DH3Pl2whw74lPT1di3KMwFA==}
     peerDependencies:
       eslint: '>= 9'
+
+  '@nkzw/stack@2.0.1':
+    resolution: {integrity: sha512-gozTYdF2QhL7RtRiJdqX/Ci+97agGGuUPN8sDOUGR+5wJjOtDg7Mp4kXm/UfjM5GSO1IW3pDBeBjGYuYh1yXvQ==}
+    peerDependencies:
+      nativewind: ^4.1.23
+      react: ^19.0.0
+      react-native: ^0.78.0
+    peerDependenciesMeta:
+      nativewind:
+        optional: true
+      react-native:
+        optional: true
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -6979,6 +6994,13 @@ snapshots:
   '@nkzw/eslint-plugin@2.0.0(eslint@9.30.0(jiti@1.21.7))':
     dependencies:
       eslint: 9.30.0(jiti@1.21.7)
+
+  '@nkzw/stack@2.0.1(nativewind@4.1.23(react-native-reanimated@3.18.0(@babel/core@7.27.7)(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react-native-safe-area-context@5.5.0(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react-native-svg@15.12.0(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)(tailwindcss@3.4.17))(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      react: 19.1.0
+    optionalDependencies:
+      nativewind: 4.1.23(react-native-reanimated@3.18.0(@babel/core@7.27.7)(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react-native-safe-area-context@5.5.0(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react-native-svg@15.12.0(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)(tailwindcss@3.4.17)
+      react-native: 0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0)
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:

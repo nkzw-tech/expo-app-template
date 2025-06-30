@@ -38,6 +38,7 @@ module.exports = withNativeWind(
     },
   },
   {
+    inlineRem: 16,
     input: './global.css',
   },
 );

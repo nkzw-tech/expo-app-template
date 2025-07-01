@@ -5,7 +5,7 @@ import { LocaleContext } from 'fbtee';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { ViewerContext } from 'src/user/useViewerContext.tsx';
 import ja_JP from '../translations/ja_JP.json' with { type: 'json' };
-import Stack from '@nkzw/stack';
+import { VStack } from '@nkzw/stack';
 
 export const unstable_settings = {
   initialRouteName: '(app)',
@@ -33,9 +33,9 @@ export default function RootLayout() {
     >
       <ViewerContext>
         <GestureHandlerRootView>
-          <Stack flex1 vertical>
+          <VStack flex1>
             <Slot />
-          </Stack>
+          </VStack>
         </GestureHandlerRootView>
       </ViewerContext>
     </LocaleContext>

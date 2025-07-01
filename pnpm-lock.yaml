@@ -29,8 +29,8 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0(react@19.1.0)
       '@nkzw/stack':
-        specifier: ^2.0.1
-        version: 2.0.1(nativewind@4.1.23(react-native-reanimated@3.18.0(@babel/core@7.27.7)(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react-native-safe-area-context@5.5.0(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react-native-svg@15.12.0(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)(tailwindcss@3.4.17))(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)
+        specifier: ^2.1.0
+        version: 2.1.0(nativewind@4.1.23(react-native-reanimated@3.18.0(@babel/core@7.27.7)(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react-native-safe-area-context@5.5.0(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react-native-svg@15.12.0(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)(tailwindcss@3.4.17))(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)
       '@react-native-async-storage/async-storage':
         specifier: ^2.2.0
         version: 2.2.0(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))
@@ -1297,8 +1297,8 @@ packages:
     peerDependencies:
       eslint: '>= 9'
 
-  '@nkzw/stack@2.0.1':
-    resolution: {integrity: sha512-gozTYdF2QhL7RtRiJdqX/Ci+97agGGuUPN8sDOUGR+5wJjOtDg7Mp4kXm/UfjM5GSO1IW3pDBeBjGYuYh1yXvQ==}
+  '@nkzw/stack@2.1.0':
+    resolution: {integrity: sha512-tOrw7qVp2CBhYYRWnjxBw1bBH4vvYnUs9AIOmNX2NJfnNw+bGe5p/s8Kdx9pkmhP06sQ11cHTSQhMScAWCipuw==}
     peerDependencies:
       nativewind: ^4.1.23
       react: ^19.0.0
@@ -6995,7 +6995,7 @@ snapshots:
     dependencies:
       eslint: 9.30.0(jiti@1.21.7)
 
-  '@nkzw/stack@2.0.1(nativewind@4.1.23(react-native-reanimated@3.18.0(@babel/core@7.27.7)(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react-native-safe-area-context@5.5.0(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react-native-svg@15.12.0(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)(tailwindcss@3.4.17))(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)':
+  '@nkzw/stack@2.1.0(nativewind@4.1.23(react-native-reanimated@3.18.0(@babel/core@7.27.7)(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react-native-safe-area-context@5.5.0(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react-native-svg@15.12.0(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0))(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)(tailwindcss@3.4.17))(react-native@0.79.4(@babel/core@7.27.7)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)':
     dependencies:
       react: 19.1.0
     optionalDependencies:

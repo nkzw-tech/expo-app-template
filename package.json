@@ -31,7 +31,7 @@
     "@legendapp/list": "^1.1.4",
     "@nkzw/core": "^1.2.1",
     "@nkzw/create-context-hook": "^1.1.0",
-    "@nkzw/stack": "^2.0.1",
+    "@nkzw/stack": "^2.1.0",
     "@react-native-async-storage/async-storage": "^2.2.0",
     "@react-navigation/native": "^7.1.14",
     "@react-navigation/stack": "^7.4.2",

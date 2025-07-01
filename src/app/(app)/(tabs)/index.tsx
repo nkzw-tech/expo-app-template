@@ -2,7 +2,7 @@ import { Stack as ExpoStack } from 'expo-router';
 import { fbs } from 'fbtee';
 import { View } from 'react-native';
 import Text from 'src/ui/Text.tsx';
-import Stack from '@nkzw/stack';
+import Stack, { VStack } from '@nkzw/stack';
 
 export default function Index() {
   return (
@@ -10,14 +10,14 @@ export default function Index() {
       <ExpoStack.Screen
         options={{ title: String(fbs('Home', 'Home header title')) }}
       />
-      <Stack alignCenter center flex1 gap={16} padding vertical>
+      <VStack alignCenter center flex1 gap={16} padding>
         <Text className="text-center text-xl font-bold color-purple">
           <fbt desc="Greeting">Welcome</fbt>
         </Text>
         <Text className="text-center italic">
           <fbt desc="Tagline">Modern, sensible defaults, fast.</fbt>
         </Text>
-        <ExpoStack alignCenter center gap={4}>
+        <Stack alignCenter center gap={4}>
           <Text className="text-center">
             <fbt desc="Live update message">
               Change{' '}
@@ -27,8 +27,8 @@ export default function Index() {
               for live updates.
             </fbt>
           </Text>
-        </ExpoStack>
-      </Stack>
+        </Stack>
+      </VStack>
     </>
   );
 }

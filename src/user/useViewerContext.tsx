@@ -1,30 +1,15 @@
 import createContextHook from '@nkzw/create-context-hook';
-import UntypedAsyncStorage from '@react-native-async-storage/async-storage';
 import { useRouter } from 'expo-router';
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
+import { MMKV } from 'react-native-mmkv';
 
-// The type of AsyncStorage is not correctly exported when using `"type": "module"` 🤷‍♂️.
-const AsyncStorage = UntypedAsyncStorage as unknown as Readonly<{
-  getItem: (key: string) => Promise<string | null>;
-  setItem: (key: string, value: string) => Promise<void>;
-}>;
-
-type LocalSettings = Readonly<{
-  localSettingExample: string | null;
-}>;
+type LocalSettingKey = 'localSettingExample';
 
 type ViewerContext = Readonly<{
   user: Readonly<{
     id: string;
   }>;
 }>;
-
-const getLocalStorageKey = (userID: string) =>
-  `$userData${userID}$localSettings`;
-
-const initialLocalSettings = {
-  localSettingExample: null,
-} as const;
 
 const [ViewerContext, useViewerContext] = createContextHook(() => {
   const router = useRouter();
@@ -35,26 +20,14 @@ const [ViewerContext, useViewerContext] = createContextHook(() => {
 
   const user = viewerContext?.user;
 
-  const [localSettings, setLocalSettings] =
-    useState<LocalSettings>(initialLocalSettings);
-
-  const updateLocalSettings = useCallback(
-    (settings: Partial<LocalSettings>) => {
-      const newSettings = {
-        ...localSettings,
-        ...settings,
-      };
-
-      setLocalSettings(newSettings);
-
-      if (user?.id) {
-        AsyncStorage.setItem(
-          getLocalStorageKey(user.id),
-          JSON.stringify(newSettings),
-        );
-      }
-    },
-    [localSettings, user],
+  const storage = useMemo(
+    () =>
+      user?.id
+        ? new MMKV({
+            id: `$userData${user.id}$localSettings`,
+          })
+        : null,
+    [user?.id],
   );
 
   const login = useCallback(async () => {
@@ -71,19 +44,33 @@ const [ViewerContext, useViewerContext] = createContextHook(() => {
     router.replace('/');
   }, [router]);
 
+  const getLocalSetting = useCallback(
+    (name: LocalSettingKey) => {
+      return storage?.getString(name) || null;
+    },
+    [storage],
+  );
+
+  const setLocalSetting = useCallback(
+    (name: LocalSettingKey, value: string) => {
+      storage?.set(name, value);
+    },
+    [storage],
+  );
+
   return {
+    getLocalSetting,
     isAuthenticated: !!user,
-    localSettings,
     login,
     logout,
-    updateLocalSettings,
+    setLocalSetting,
     user,
   };
 });
 
 export function useLocalSettings() {
-  const { localSettings, updateLocalSettings } = useViewerContext();
-  return [localSettings, updateLocalSettings] as const;
+  const { getLocalSetting, setLocalSetting } = useViewerContext();
+  return [getLocalSetting, setLocalSetting] as const;
 }
 
 export { ViewerContext };

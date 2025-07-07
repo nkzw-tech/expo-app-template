@@ -1,7 +1,7 @@
 import _AntDesign from '@expo/vector-icons/AntDesign.js';
 import { Tabs } from 'expo-router';
 import { fbs, useLocaleContext } from 'fbtee';
-import { FC } from 'react';
+import { FC, useTransition } from 'react';
 import { Pressable, View } from 'react-native';
 import colors from 'src/ui/colors.ts';
 import Text from 'src/ui/Text.tsx';
@@ -14,6 +14,7 @@ const AntDesign = _AntDesign as unknown as FC<{
 }>;
 
 export default function TabLayout() {
+  const [, startTransition] = useTransition();
   const { locale, setLocale } = useLocaleContext();
 
   return (
@@ -31,7 +32,11 @@ export default function TabLayout() {
           headerRight: () => (
             <Pressable
               className="mr-2 rounded px-4 py-0"
-              onPress={() => setLocale(locale === 'ja_JP' ? 'en_US' : 'ja_JP')}
+              onPress={() =>
+                startTransition(() =>
+                  setLocale(locale === 'ja_JP' ? 'en_US' : 'ja_JP'),
+                )
+              }
             >
               {({ pressed }) => (
                 <View

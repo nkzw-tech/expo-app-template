@@ -52,8 +52,12 @@ const [ViewerContext, useViewerContext] = createContextHook(() => {
   );
 
   const setLocalSetting = useCallback(
-    (name: LocalSettingKey, value: string) => {
-      storage?.set(name, value);
+    (name: LocalSettingKey, value: string | null) => {
+      if (value == null) {
+        storage?.delete(name);
+      } else {
+        storage?.set(name, value);
+      }
     },
     [storage],
   );

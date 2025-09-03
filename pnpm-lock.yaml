@@ -112,6 +112,12 @@ importers:
       react-native-worklets:
         specifier: ^0.5.1
         version: 0.5.1(@babel/core@7.28.4)(react-native@0.81.4(@babel/core@7.28.4)(@types/react@19.1.13)(react@19.1.1))(react@19.1.1)
+      react-relay:
+        specifier: ^20.0.0
+        version: 20.0.0(react@19.1.1)
+      relay-runtime:
+        specifier: ^20.0.0
+        version: 20.0.0
     devDependencies:
       '@ianvs/prettier-plugin-sort-imports':
         specifier: ^4.7.0
@@ -134,9 +140,18 @@ importers:
       '@types/react':
         specifier: ~19.1.13
         version: 19.1.13
+      '@types/react-relay':
+        specifier: ^18.2.1
+        version: 18.2.1
+      '@types/relay-runtime':
+        specifier: ^19.0.2
+        version: 19.0.2
       '@vitejs/plugin-react':
         specifier: ^5.0.2
         version: 5.0.2(vite@7.1.5(@types/node@24.3.1)(jiti@1.21.7)(lightningcss@1.30.1)(terser@5.44.0)(tsx@4.19.3)(yaml@2.7.1))
+      babel-plugin-relay:
+        specifier: ^20.0.0
+        version: 20.0.0
       eslint:
         specifier: ^9.35.0
         version: 9.35.0(jiti@1.21.7)
@@ -158,6 +173,9 @@ importers:
       react-native-svg-transformer:
         specifier: ^1.5.1
         version: 1.5.1(react-native-svg@15.13.0(react-native@0.81.4(@babel/core@7.28.4)(@types/react@19.1.13)(react@19.1.1))(react@19.1.1))(react-native@0.81.4(@babel/core@7.28.4)(@types/react@19.1.13)(react@19.1.1))(typescript@5.9.2)
+      relay-compiler:
+        specifier: ^20.0.0
+        version: 20.0.0
       tailwindcss:
         specifier: ^3.4.0
         version: 3.4.17
@@ -2119,8 +2137,17 @@ packages:
   '@types/node@24.3.1':
     resolution: {integrity: sha512-3vXmQDXy+woz+gnrTvuvNrPzekOi+Ds0ReMxw0LzBiK3a+1k0kQn9f2NWk+lgD4rJehFUmYy2gMhJ2ZI+7YP9g==}
 
+  '@types/parse-json@4.0.2':
+    resolution: {integrity: sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw==}
+
+  '@types/react-relay@18.2.1':
+    resolution: {integrity: sha512-KgmFapsxAylhxcFfaAv5GZZJhTHnDvV8IDZVsUm5afpJUvgZC1Y68ssfOGsFfiFY/2EhxHM/YPfpdKbfmF3Ecg==}
+
   '@types/react@19.1.13':
     resolution: {integrity: sha512-hHkbU/eoO3EG5/MZkuFSKmYqPbSVk5byPFa3e7y/8TybHiLMACgI8seVYlicwk7H5K/rI2px9xrQp/C+AUDTiQ==}
+
+  '@types/relay-runtime@19.0.2':
+    resolution: {integrity: sha512-lcWb+/7cPG21UgtK/fdpt8QgtV2GYc8TQIusZUBL1k2oy+8oNwYQAAj0/j1pkg77sk/p5MQPQZYOWN9i8wpUhg==}
 
   '@types/stack-utils@2.0.3':
     resolution: {integrity: sha512-9aEbYZ3TbYMznPdcdr3SmIrLXwC/AKZXQeCf9Pgao5CKb8CyHuEX5jzWPTkvregvhRJHcpRO6BFoGW9ycaOkYw==}
@@ -2482,6 +2509,9 @@ packages:
     resolution: {integrity: sha512-ESAc/RJvGTFEzRwOTT4+lNDk/GNHMkKbNzsvT0qKRfDyyYTskxB5rnU2njIDYVxXCBHHEI1c0YwHob3WaYujOg==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
 
+  babel-plugin-macros@2.8.0:
+    resolution: {integrity: sha512-SEP5kJpfGYqYKpBrj5XU3ahw5p5GOHJ0U5ssOSQ/WBVdwkD2Dzlce95exQTs3jOVWPPKLBN2rlEWkCK7dSmLvg==}
+
   babel-plugin-polyfill-corejs2@0.4.14:
     resolution: {integrity: sha512-Co2Y9wX854ts6U8gAAPXfn0GmAyctHuK8n0Yhfjd6t30g7yvKjspvvOo9yG+z52PZRgFErt7Ka2pYnXCjLKEpg==}
     peerDependencies:
@@ -2502,6 +2532,9 @@ packages:
 
   babel-plugin-react-native-web@0.21.1:
     resolution: {integrity: sha512-7XywfJ5QIRMwjOL+pwJt2w47Jmi5fFLvK7/So4fV4jIN6PcRbylCp9/l3cJY4VJbSz3lnWTeHDTD1LKIc1C09Q==}
+
+  babel-plugin-relay@20.0.0:
+    resolution: {integrity: sha512-Gd4EKWjL5mvVhkuz+R4NJOqYmre/PkyIqK9ljySmehwdDWg9fs3Nv7NWHiHzQC3JAgiEwohCwOSYSqr1DgB3xw==}
 
   babel-plugin-syntax-hermes-parser@0.29.1:
     resolution: {integrity: sha512-2WFYnoWGdmih1I1J5eIqxATOeycOqRwYxAQBu3cUu/rhwInwHUg7k60AFNbuGjSDL8tje5GDrAnxzRLcu2pYcA==}
@@ -2798,6 +2831,10 @@ packages:
   cosmiconfig@5.2.1:
     resolution: {integrity: sha512-H65gsXo1SKjf8zmrJ67eJk8aIRKV5ff2D4uKZIBZShbhGSpEmsQOPW/SKMKYhSTrqR7ufy6RP69rPogdaPh/kA==}
     engines: {node: '>=4'}
+
+  cosmiconfig@6.0.0:
+    resolution: {integrity: sha512-xb3ZL6+L8b9JLLCx3ZdoZy4+2ECphCMo2PwqgP1tlfVq6M6YReyzBJtvWWtbDSpNr9hn96pkCiZqUcFEc+54Qg==}
+    engines: {node: '>=8'}
 
   cosmiconfig@8.3.6:
     resolution: {integrity: sha512-kcZ6+W5QzcJ3P1Mt+83OUv/oHFqZHIx8DuxG6eZ5RGMERoLqp4BuGjhHLYGK+Kf5XVkQvqBSmAy/nGWN3qDgEA==}
@@ -3652,6 +3689,10 @@ packages:
 
   graphemer@1.4.0:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
+
+  graphql@15.3.0:
+    resolution: {integrity: sha512-GTCJtzJmkFLWRfFJuoo9RWWa/FfamUHgiFosxi/X1Ani4AVWbeyBenZTNX6dM+7WSbbFfTo/25eh0LLkwHMw2w==}
+    engines: {node: '>= 10.x'}
 
   graphql@16.10.0:
     resolution: {integrity: sha512-AjqGKbDGUFRKIRCP9tCKiIGHyriz2oHEbPIbEtcSLSs4YjReZOIPQQWek4+6hjw62H9QShXHyaGivGiYVLeYFQ==}
@@ -5005,6 +5046,11 @@ packages:
     resolution: {integrity: sha512-z6F7K9bV85EfseRCp2bzrpyQ0Gkw1uLoCel9XBVWPg/TjRj94SkJzUTGfOa4bs7iJvBWtQG0Wq7wnI0syw3EBQ==}
     engines: {node: '>=0.10.0'}
 
+  react-relay@20.0.0:
+    resolution: {integrity: sha512-4Fm3xs8TmCh0B8zargSIWjU6Mdf3AFf4epTboZBHwyN0xDynF53PsiiCgbP5WRAd63oC54T+TF4MrTXdc4VYIw==}
+    peerDependencies:
+      react: ^16.9.0 || ^17 || ^18 || ^19
+
   react-remove-scroll-bar@2.3.8:
     resolution: {integrity: sha512-9r+yi9+mgU33AKcj6IbT9oRCO78WriSj6t/cF8DWBZJ9aOGPOTEDvdUDz1FwKim7QXWwmHqtdHnRJfhAxEG46Q==}
     engines: {node: '>=10'}
@@ -5082,6 +5128,13 @@ packages:
   regjsparser@0.12.0:
     resolution: {integrity: sha512-cnE+y8bz4NhMjISKbgeVJtqNbtf5QpjZP+Bslo+UqkIt9QPnX9q095eiRRASJG1/tz6dlNr6Z5NsBiWYokp6EQ==}
     hasBin: true
+
+  relay-compiler@20.0.0:
+    resolution: {integrity: sha512-SnsN9/Yjh5kmZbt91Wr70xv3VKORRHx3W4cB+yhz9FpzStlI7qkB9jDlGkvUa6hICZ+rbIooe7OekejjSQ2j5Q==}
+    hasBin: true
+
+  relay-runtime@20.0.0:
+    resolution: {integrity: sha512-GwS4WbJZSxfut1nJRCcUVWfOwl6TZ2dWFlb4s8vX0S6/EBLlAKxi5YKOejFe302JVCGp/YbXhezYAY21L6AsGw==}
 
   repeat-string@1.6.1:
     resolution: {integrity: sha512-PV0dzCYDNfRi1jCDbJzpW7jNNDRuCOG/jI5ctQcGKt/clZD+YcPS3yIlWuTJMmESC8aevCFmWJy5wjAFgNqN6w==}
@@ -5949,6 +6002,10 @@ packages:
   yallist@5.0.0:
     resolution: {integrity: sha512-YgvUTfwqyc7UXVMrB+SImsVYSmTS8X/tSrtdNZMImM+n7+QTriRXyXim0mBrTXNeqzVF0KWGgHPeiyViFFrNDw==}
     engines: {node: '>=18'}
+
+  yaml@1.10.2:
+    resolution: {integrity: sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==}
+    engines: {node: '>= 6'}
 
   yaml@2.7.1:
     resolution: {integrity: sha512-10ULxpnOCQXxJvBgxsn9ptjq6uviG/htZKk9veJGhlqn3w/DxQ631zFF+nlQXLwmImeS5amR2dl2U8sg6U9jsQ==}
@@ -8336,9 +8393,18 @@ snapshots:
     dependencies:
       undici-types: 7.10.0
 
+  '@types/parse-json@4.0.2': {}
+
+  '@types/react-relay@18.2.1':
+    dependencies:
+      '@types/react': 19.1.13
+      '@types/relay-runtime': 19.0.2
+
   '@types/react@19.1.13':
     dependencies:
       csstype: 3.1.3
+
+  '@types/relay-runtime@19.0.2': {}
 
   '@types/stack-utils@2.0.3': {}
 
@@ -8749,6 +8815,12 @@ snapshots:
       '@types/babel__core': 7.20.5
       '@types/babel__traverse': 7.28.0
 
+  babel-plugin-macros@2.8.0:
+    dependencies:
+      '@babel/runtime': 7.28.4
+      cosmiconfig: 6.0.0
+      resolve: 1.22.10
+
   babel-plugin-polyfill-corejs2@0.4.14(@babel/core@7.28.4):
     dependencies:
       '@babel/compat-data': 7.28.4
@@ -8778,6 +8850,12 @@ snapshots:
       '@babel/types': 7.28.4
 
   babel-plugin-react-native-web@0.21.1: {}
+
+  babel-plugin-relay@20.0.0:
+    dependencies:
+      babel-plugin-macros: 2.8.0
+      cosmiconfig: 5.2.1
+      graphql: 15.3.0
 
   babel-plugin-syntax-hermes-parser@0.29.1:
     dependencies:
@@ -9128,6 +9206,14 @@ snapshots:
       is-directory: 0.3.1
       js-yaml: 3.14.1
       parse-json: 4.0.0
+
+  cosmiconfig@6.0.0:
+    dependencies:
+      '@types/parse-json': 4.0.2
+      import-fresh: 3.3.1
+      parse-json: 5.2.0
+      path-type: 4.0.0
+      yaml: 1.10.2
 
   cosmiconfig@8.3.6(typescript@5.9.2):
     dependencies:
@@ -10197,6 +10283,8 @@ snapshots:
   graceful-fs@4.2.11: {}
 
   graphemer@1.4.0: {}
+
+  graphql@15.3.0: {}
 
   graphql@16.10.0:
     optional: true
@@ -11616,6 +11704,17 @@ snapshots:
 
   react-refresh@0.17.0: {}
 
+  react-relay@20.0.0(react@19.1.1):
+    dependencies:
+      '@babel/runtime': 7.28.4
+      fbjs: 3.0.5
+      invariant: 2.2.4
+      nullthrows: 1.1.1
+      react: 19.1.1
+      relay-runtime: 20.0.0
+    transitivePeerDependencies:
+      - encoding
+
   react-remove-scroll-bar@2.3.8(@types/react@19.1.13)(react@19.1.1):
     dependencies:
       react: 19.1.1
@@ -11702,6 +11801,16 @@ snapshots:
   regjsparser@0.12.0:
     dependencies:
       jsesc: 3.0.2
+
+  relay-compiler@20.0.0: {}
+
+  relay-runtime@20.0.0:
+    dependencies:
+      '@babel/runtime': 7.28.4
+      fbjs: 3.0.5
+      invariant: 2.2.4
+    transitivePeerDependencies:
+      - encoding
 
   repeat-string@1.6.1: {}
 
@@ -12675,6 +12784,8 @@ snapshots:
   yallist@3.1.1: {}
 
   yallist@5.0.0: {}
+
+  yaml@1.10.2: {}
 
   yaml@2.7.1: {}
 

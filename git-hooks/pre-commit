@@ -8,6 +8,19 @@
 
 set -euo pipefail
 
+# Decide how to invoke Prettier consistently (prefer Nix dev shell when available)
+run_prettier() {
+  if [ "${IN_NIX_SHELL-}" = "impure" ] || [ "${IN_NIX_SHELL-}" = "pure" ]; then
+    # Already in nix develop shell
+    pnpm prettier --experimental-cli "$@"
+  elif command -v nix >/dev/null 2>&1; then
+    # Use nix develop to ensure consistent toolchain
+    nix develop -c pnpm prettier --experimental-cli "$@"
+  else
+    pnpm prettier --experimental-cli "$@"
+  fi
+}
+
 REPO_ROOT=$(git rev-parse --show-toplevel)
 
 # Require pnpm and Prettier (experimental CLI) to be available
@@ -27,12 +40,17 @@ if [ ! -s "$STAGED_LIST" ]; then
   exit 0
 fi
 
-# Helper: format one blob (read from stdin) as if it were file $1, emit to stdout
+# Helper: format one blob using a temp file and emit formatted content to stdout.
+# Using --write on a temp file ensures config resolution matches pnpm format.
 prettier_fmt() {
-  pnpm prettier --experimental-cli \
-    --stdin-filepath "$1" \
-    --config-path "$REPO_ROOT/prettier.config.js" \
-    --ignore-unknown
+  tmp=$(mktemp 2>/dev/null || mktemp -t precommit_blob)
+  # Write stdin to temp file
+  cat >"$tmp"
+  # Run Prettier on the temp file
+  run_prettier --write --ignore-unknown --config-path "$REPO_ROOT/prettier.config.js" "$tmp" >/dev/null 2>&1 || true
+  # Emit formatted content
+  cat "$tmp"
+  rm -f "$tmp" >/dev/null 2>&1 || true
 }
 
 # Helper: check if a path should be formatted (Prettier-known extensions)
@@ -80,20 +98,19 @@ done <"$STAGED_LIST"
 
 # Build a set (NUL list) of files with unstaged changes
 UNSTAGED_LIST=$(mktemp 2>/dev/null || mktemp -t precommit_unstaged)
-# Cleanup trap to remove all temp files
+# Prepare a worktree file list path so cleanup never references an unset var
+to_format_worktree=$(mktemp 2>/dev/null || mktemp -t precommit_worktree)
+# Cleanup trap to remove all temp files (safe under `set -u`)
 cleanup_all() {
-  rm -f "$STAGED_LIST" "$UNSTAGED_LIST" "$to_format_worktree" \
-        "$to_format_worktree.staged" "$to_format_worktree.unstaged" \
-        >/dev/null 2>&1 || true
+  rm -f "$STAGED_LIST" >/dev/null 2>&1 || true
+  [ -n "${UNSTAGED_LIST-}" ] && rm -f "$UNSTAGED_LIST" >/dev/null 2>&1 || true
+  [ -n "${to_format_worktree-}" ] && rm -f "$to_format_worktree" "$to_format_worktree.staged" "$to_format_worktree.unstaged" >/dev/null 2>&1 || true
 }
 trap cleanup_all EXIT
 git diff --name-only -z --diff-filter=ACMR >"$UNSTAGED_LIST" || true
 if [ ! -s "$UNSTAGED_LIST" ]; then
   exit 0
 fi
-
-# Intersect STAGED_FILES and UNSTAGED to only format working copies we touched
-to_format_worktree=$(mktemp 2>/dev/null || mktemp -t precommit_worktree)
 
 # Create maps to intersect using awk (handles NUL by mapping to lines safely)
 # Replace NULs with newlines just for set ops; file names with newlines are
@@ -105,12 +122,12 @@ awk 'NR==FNR{a[$0]=1; next} ($0 in a){print $0}' \
 
 if [ -s "$to_format_worktree" ]; then
   # Run Prettier on the working copies without staging
-  # Use xargs null delim by reintroducing NULs
-  tr '\n' '\0' <"$to_format_worktree" \
-    | xargs -0 pnpm prettier --experimental-cli --write --ignore-unknown \
-        --config-path "$REPO_ROOT/prettier.config.js" || {
-          echo "pre-commit: warning: Prettier failed on working copies; commit proceeds." >&2
-        }
+  while IFS= read -r f; do
+    [ -z "$f" ] && continue
+    run_prettier --write --ignore-unknown --config-path "$REPO_ROOT/prettier.config.js" "$f" || {
+      echo "pre-commit: warning: Prettier failed on working copy $f; commit proceeds." >&2
+    }
+  done <"$to_format_worktree"
 fi
 
 exit 0

@@ -1,7 +1,116 @@
 #!/bin/sh
-FILES=$(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g')
-[ -z "$FILES" ] && exit 0
-echo "$FILES" | xargs pnpm prettier --experimental-cli --write --ignore-unknown
-echo "$FILES" | xargs git add
+
+# Pre-commit formatter that preserves partial staging and avoids restaging
+# - Formats INDEX content per-file (using --stdin-filepath so repo config applies)
+#   and updates the index without touching the working tree.
+# - Then, for any files that still have unstaged changes, formats the working
+#   copies (without staging) so the working tree isn't "reverting" formatting.
+
+set -euo pipefail
+
+REPO_ROOT=$(git rev-parse --show-toplevel)
+
+# Require pnpm and Prettier (experimental CLI) to be available
+if ! command -v pnpm >/dev/null 2>&1; then
+  echo "pre-commit: pnpm is required to run Prettier." >&2
+  exit 1
+fi
+if ! pnpm prettier --experimental-cli --version >/dev/null 2>&1; then
+  echo "pre-commit: Prettier experimental CLI not found (pnpm prettier --experimental-cli)." >&2
+  exit 1
+fi
+
+# Gather staged files into a temp file (NUL-delimited). Do NOT store NULs in variables.
+STAGED_LIST=$(mktemp 2>/dev/null || mktemp -t precommit_staged)
+git diff --cached --name-only --diff-filter=ACMR -z >"$STAGED_LIST" || true
+if [ ! -s "$STAGED_LIST" ]; then
+  exit 0
+fi
+
+# Helper: format one blob (read from stdin) as if it were file $1, emit to stdout
+prettier_fmt() {
+  pnpm prettier --experimental-cli \
+    --stdin-filepath "$1" \
+    --config-path "$REPO_ROOT/prettier.config.js" \
+    --ignore-unknown
+}
+
+# Helper: check if a path should be formatted (Prettier-known extensions)
+should_format() {
+  case "$1" in
+    *.ts|*.tsx|*.mts|*.cts|*.js|*.jsx|*.mjs|*.cjs|*.json|*.jsonc|*.yml|*.yaml|*.toml|*.md|*.mdx|*.css|*.scss|*.less|*.gql|*.graphql|*.html)
+      return 0 ;;
+    *)
+      return 1 ;;
+  esac
+}
+
+# Update index with formatted content for each staged file
+while IFS= read -r -d '' f; do
+  [ -z "$f" ] && continue
+
+  # Skip if file is removed from index (defensive, though we filtered above)
+  if ! git ls-files --error-unmatch -- "$f" >/dev/null 2>&1; then
+    continue
+  fi
+
+  # Skip files Prettier can't infer a parser for (stdin mode doesn't honor --ignore-unknown)
+  if ! should_format "$f"; then
+    continue
+  fi
+
+  # Preserve original mode from index (default 100644)
+  mode=$(git ls-files -s -- "$f" | awk '{print $1; exit}')
+  [ -z "$mode" ] && mode=100644
+  case "$mode" in
+    100*) ;;
+    *)
+      # Skip non-regular files (symlinks, submodules, etc.)
+      continue
+      ;;
+  esac
+
+  # Show index blob, format via Prettier, write new blob, update index
+  blob=$(git show ":$f" | prettier_fmt "$f" | git hash-object -w --stdin)
+  git update-index --cacheinfo "$mode,$blob,$f"
+done <"$STAGED_LIST"
+
+# After updating the index, format the working copies for files that still
+# have unstaged changes, but do not stage them. This avoids the "revert" UX.
+
+# Build a set (NUL list) of files with unstaged changes
+UNSTAGED_LIST=$(mktemp 2>/dev/null || mktemp -t precommit_unstaged)
+# Cleanup trap to remove all temp files
+cleanup_all() {
+  rm -f "$STAGED_LIST" "$UNSTAGED_LIST" "$to_format_worktree" \
+        "$to_format_worktree.staged" "$to_format_worktree.unstaged" \
+        >/dev/null 2>&1 || true
+}
+trap cleanup_all EXIT
+git diff --name-only -z --diff-filter=ACMR >"$UNSTAGED_LIST" || true
+if [ ! -s "$UNSTAGED_LIST" ]; then
+  exit 0
+fi
+
+# Intersect STAGED_FILES and UNSTAGED to only format working copies we touched
+to_format_worktree=$(mktemp 2>/dev/null || mktemp -t precommit_worktree)
+
+# Create maps to intersect using awk (handles NUL by mapping to lines safely)
+# Replace NULs with newlines just for set ops; file names with newlines are
+# practically unsupported in git and Prettier, so this is acceptable.
+tr '\0' '\n' <"$STAGED_LIST" >"$to_format_worktree.staged"
+tr '\0' '\n' <"$UNSTAGED_LIST" >"$to_format_worktree.unstaged"
+awk 'NR==FNR{a[$0]=1; next} ($0 in a){print $0}' \
+  "$to_format_worktree.staged" "$to_format_worktree.unstaged" >"$to_format_worktree"
+
+if [ -s "$to_format_worktree" ]; then
+  # Run Prettier on the working copies without staging
+  # Use xargs null delim by reintroducing NULs
+  tr '\n' '\0' <"$to_format_worktree" \
+    | xargs -0 pnpm prettier --experimental-cli --write --ignore-unknown \
+        --config-path "$REPO_ROOT/prettier.config.js" || {
+          echo "pre-commit: warning: Prettier failed on working copies; commit proceeds." >&2
+        }
+fi
 
 exit 0

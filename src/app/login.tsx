@@ -1,7 +1,7 @@
 import Stack from '@nkzw/stack';
 import { useRouter } from 'expo-router';
 import { useCallback } from 'react';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Text from 'src/ui/Text.tsx';
 import useViewerContext from 'src/user/useViewerContext.tsx';
 

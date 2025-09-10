@@ -1,0 +1,11 @@
+diff --git a/plugin/index.js b/plugin/index.js
+index efde8381158724e49d7494f3a82626f8f3485628..53880aad9c27c026a39a497e362c038979c2842e 100644
+--- a/plugin/index.js
++++ b/plugin/index.js
+@@ -1,6 +1,3 @@
+ // @ts-ignore plugin type isn't exposed
+ const plugin = require('react-native-worklets/plugin');
+-console.warn(
+-  '[Reanimated] Seems like you are using a Babel plugin `react-native-reanimated/plugin`. It was moved to `react-native-worklets` package. Please use `react-native-worklets/plugin` instead.'
+-);
+ module.exports = plugin;

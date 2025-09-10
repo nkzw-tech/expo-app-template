@@ -1,6 +1,6 @@
+import { VStack } from '@nkzw/stack';
 import Text from 'src/ui/Text.tsx';
 import useViewerContext from 'src/user/useViewerContext.tsx';
-import { VStack } from '@nkzw/stack';
 
 export default function Two() {
   const { logout } = useViewerContext();

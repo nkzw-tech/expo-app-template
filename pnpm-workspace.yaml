@@ -1,3 +1,5 @@
+ignorePatchFailures: false
+
 nodeLinker: hoisted
 
 onlyBuiltDependencies:
@@ -6,5 +8,6 @@ onlyBuiltDependencies:
 
 patchedDependencies:
   metro: patches/metro.patch
+  react-native-reanimated: patches/react-native-reanimated.patch
 
-ignorePatchFailures: true
+shamefullyHoist: true

@@ -1,8 +1,8 @@
+import Stack, { VStack } from '@nkzw/stack';
 import { Stack as ExpoStack } from 'expo-router';
 import { fbs } from 'fbtee';
 import { View } from 'react-native';
 import Text from 'src/ui/Text.tsx';
-import Stack, { VStack } from '@nkzw/stack';
 
 export default function Index() {
   return (

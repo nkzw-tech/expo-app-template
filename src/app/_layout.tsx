@@ -30,7 +30,7 @@ export default function RootLayout() {
     <LocaleContext>
       <ViewerContext>
         <GestureHandlerRootView>
-          <VStack flex1>
+          <VStack className="!basis-full" flex1>
             <Slot />
           </VStack>
         </GestureHandlerRootView>

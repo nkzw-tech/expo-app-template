@@ -16,7 +16,7 @@ export default function Login() {
 
   return (
     <SafeAreaView className="flex-1">
-      <Stack alignCenter center flex1 padding={16}>
+      <Stack alignCenter center className="!basis-full" flex1 padding={16}>
         <Text className="w-full text-center text-lg" onPress={onPress}>
           <fbt desc="Login button">Login</fbt>
         </Text>

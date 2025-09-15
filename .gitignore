@@ -2,6 +2,7 @@
 .env.local
 .eslintcache
 .expo/
+.idea
 .metro-health-check*
 *.jks
 *.key

@@ -1,4 +1,5 @@
 import _AntDesign from '@expo/vector-icons/AntDesign.js';
+import { type IconProps } from '@expo/vector-icons/build/createIconSet.js';
 import { Tabs } from 'expo-router';
 import { fbs, useLocaleContext } from 'fbtee';
 import { FC, useTransition } from 'react';
@@ -7,11 +8,7 @@ import colors from 'src/ui/colors.ts';
 import Text from 'src/ui/Text.tsx';
 
 // Types in `@expo/vector-icons` do not currently work correctly in `"type": "module"` packages.
-const AntDesign = _AntDesign as unknown as FC<{
-  color: string;
-  name: string;
-  size: number;
-}>;
+const AntDesign = _AntDesign as unknown as FC<IconProps<string>>;
 
 export default function TabLayout() {
   const [, startTransition] = useTransition();
@@ -21,9 +18,9 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         sceneStyle: {
-          backgroundColor: 'transparent',
+          backgroundColor: colors.screen,
         },
-        tabBarActiveTintColor: colors.purple,
+        tabBarActiveTintColor: colors.accent,
       }}
     >
       <Tabs.Screen
@@ -51,7 +48,7 @@ export default function TabLayout() {
           ),
           tabBarIcon: ({ focused }: { focused: boolean }) => (
             <AntDesign
-              color={focused ? colors.purple : colors.black}
+              color={focused ? colors.accent : colors.text}
               name="ie"
               size={24}
             />
@@ -64,7 +61,7 @@ export default function TabLayout() {
         options={{
           tabBarIcon: ({ focused }: { focused: boolean }) => (
             <AntDesign
-              color={focused ? colors.purple : colors.black}
+              color={focused ? colors.accent : colors.text}
               name="printer"
               size={24}
             />

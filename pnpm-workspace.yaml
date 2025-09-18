@@ -6,4 +6,3 @@ onlyBuiltDependencies:
 
 patchedDependencies:
   metro: patches/metro.patch
-  react-native-reanimated: patches/react-native-reanimated.patch

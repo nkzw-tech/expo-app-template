@@ -30,7 +30,7 @@ After you created your repo, you can freely modify anything in this template.
 
 ### Prerequisites
 
-You'll need Node.js 22, pnpm 10+ and Cocoapods.
+You'll need Node.js 24, pnpm 10+ and Cocoapods.
 
 ```bash
 

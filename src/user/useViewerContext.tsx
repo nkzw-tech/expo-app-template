@@ -1,7 +1,7 @@
 import createContextHook from '@nkzw/create-context-hook';
 import { useRouter } from 'expo-router';
 import { useCallback, useMemo, useState } from 'react';
-import { MMKV } from 'react-native-mmkv';
+import { createMMKV } from 'react-native-mmkv';
 
 type LocalSettingKey = 'localSettingExample';
 
@@ -23,7 +23,7 @@ const [ViewerContext, useViewerContext] = createContextHook(() => {
   const storage = useMemo(
     () =>
       user?.id
-        ? new MMKV({
+        ? createMMKV({
             id: `$userData${user.id}$localSettings`,
           })
         : null,
@@ -54,7 +54,7 @@ const [ViewerContext, useViewerContext] = createContextHook(() => {
   const setLocalSetting = useCallback(
     (name: LocalSettingKey, value: string | null) => {
       if (value == null) {
-        storage?.delete(name);
+        storage?.remove(name);
       } else {
         storage?.set(name, value);
       }

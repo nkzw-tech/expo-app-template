@@ -3,6 +3,3 @@ ignorePatchFailures: false
 onlyBuiltDependencies:
   - esbuild
   - unrs-resolver
-
-patchedDependencies:
-  metro: patches/metro.patch

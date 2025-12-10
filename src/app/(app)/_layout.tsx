@@ -2,7 +2,7 @@ import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { Redirect, Stack } from 'expo-router';
 import { useLocaleContext } from 'fbtee';
 import { Fragment } from 'react/jsx-runtime';
-import useViewerContext from 'src/user/useViewerContext.tsx';
+import useViewerContext from '../../user/useViewerContext.tsx';
 
 export default function TabLayout() {
   const { locale } = useLocaleContext();

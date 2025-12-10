@@ -1,11 +1,11 @@
-import 'global.css';
+import '../../global.css';
 import { VStack } from '@nkzw/stack';
 import { getLocales } from 'expo-localization';
 import { Slot } from 'expo-router';
 import { createLocaleContext } from 'fbtee';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { ViewerContext } from 'src/user/useViewerContext.tsx';
 import ja_JP from '../translations/ja_JP.json' with { type: 'json' };
+import { ViewerContext } from '../user/useViewerContext.tsx';
 
 export const unstable_settings = {
   initialRouteName: '(app)',

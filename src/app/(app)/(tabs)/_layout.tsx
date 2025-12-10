@@ -4,8 +4,8 @@ import { Tabs } from 'expo-router';
 import { fbs, useLocaleContext } from 'fbtee';
 import { FC, useTransition } from 'react';
 import { Pressable, View } from 'react-native';
-import colors from 'src/ui/colors.ts';
-import Text from 'src/ui/Text.tsx';
+import colors from '../../../ui/colors.ts';
+import Text from '../../../ui/Text.tsx';
 
 // Types in `@expo/vector-icons` do not currently work correctly in `"type": "module"` packages.
 const AntDesign = _AntDesign as unknown as FC<IconProps<string>>;

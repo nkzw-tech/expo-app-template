@@ -18,7 +18,7 @@
     "prebuild": "expo prebuild",
     "start": "expo start --dev-client",
     "test": "NODE_OPTIONS='--no-experimental-detect-module' npm-run-all --parallel tsc:check vitest:run lint lint:format",
-    "tsc:check": "tsc",
+    "tsc:check": "tsgo",
     "vitest:run": "vitest run",
     "web": "expo start --web"
   },
@@ -64,6 +64,7 @@
     "@prettier/plugin-oxc": "^0.0.4",
     "@react-native/metro-babel-transformer": "^0.81.1",
     "@types/react": "^19.2.2",
+    "@typescript/native-preview": "7.0.0-dev.20251209.1",
     "@vitejs/plugin-react": "^5.1.0",
     "eslint": "^9.39.0",
     "expo-build-disk-cache": "^0.7.1",

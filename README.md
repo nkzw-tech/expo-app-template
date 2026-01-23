@@ -17,7 +17,7 @@ You have to make a lot of decisions and install tons of packages every time you 
 - [React Compiler](https://react.dev/learn/react-compiler)
 - [`@gorhom/bottom-sheet`](https://github.com/gorhom/react-native-bottom-sheet), [Legend List](https://github.com/LegendApp/legend-list), [`react-native-svg`](https://github.com/software-mansion/react-native-svg) (+ `react-native-svg-transformer`).
 - [pnpm](https://pnpm.io/)
-- **ESM:** _It's 2025._ This template comes with `"type": "module"`.
+- **ESM:** This template comes with `"type": "module"`.
 - _(Optional)_ [Relay](https://relay.dev/) for data fetching -> check out the [`with-relay` branch](https://github.com/nkzw-tech/expo-app-template/tree/with-relay).
 
 Check out the [`nkzw-tech/server-template`](https://github.com/nkzw-tech/server-template) for a GraphQL based server with Pothos and Prisma, or the [`nkzw-tech/web-app-template`](https://github.com/nkzw-tech/web-app-template) for building web apps.

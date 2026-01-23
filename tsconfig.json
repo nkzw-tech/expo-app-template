@@ -21,10 +21,10 @@
   },
   "exclude": ["node_modules"],
   "include": [
+    ".expo/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".expo/types/**/*.ts",
-    "expo-env.d.ts",
-    "nativewind-env.d.ts"
+    "app-env.d.ts",
+    "expo-env.d.ts"
   ]
 }

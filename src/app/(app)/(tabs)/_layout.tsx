@@ -3,9 +3,8 @@ import { type IconProps } from '@expo/vector-icons/build/createIconSet.js';
 import { Tabs } from 'expo-router';
 import { fbs, useLocaleContext } from 'fbtee';
 import { FC, useTransition } from 'react';
-import { Pressable, View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
 import colors from '../../../ui/colors.ts';
-import Text from '../../../ui/Text.tsx';
 
 // Types in `@expo/vector-icons` do not currently work correctly in `"type": "module"` packages.
 const AntDesign = _AntDesign as unknown as FC<IconProps<string>>;
@@ -18,7 +17,7 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         sceneStyle: {
-          backgroundColor: colors.screen,
+          backgroundColor: colors.background,
         },
         tabBarActiveTintColor: colors.accent,
       }}

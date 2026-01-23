@@ -1,8 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import { BottomSheetModal as OriginalBottomSheetModal } from '@gorhom/bottom-sheet';
-import { cssInterop } from 'nativewind';
+import { withUniwind } from 'uniwind';
 
-export const BottomSheetModal = cssInterop(OriginalBottomSheetModal, {
+export const BottomSheetModal = withUniwind(OriginalBottomSheetModal, {
   className: {
     target: 'style',
   },

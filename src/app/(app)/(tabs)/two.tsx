@@ -1,5 +1,5 @@
 import { VStack } from '@nkzw/stack';
-import Text from '../../../ui/Text.tsx';
+import { Text } from 'react-native';
 import useViewerContext from '../../../user/useViewerContext.tsx';
 
 export default function Two() {

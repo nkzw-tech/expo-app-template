@@ -1,7 +1,7 @@
 const { getDefaultConfig } = require('expo/metro-config');
-const { withNativeWind } = require('nativewind/metro');
 const { createHash } = require('node:crypto');
 const { existsSync, readFileSync } = require('node:fs');
+const { withUniwindConfig } = require('uniwind/metro');
 
 const getCacheVersion = (values) =>
   values
@@ -14,14 +14,13 @@ const getCacheVersion = (values) =>
 
 const config = getDefaultConfig(__dirname);
 
-module.exports = withNativeWind(
+module.exports = withUniwindConfig(
   {
     ...config,
     cacheVersion: getCacheVersion([
       config.cacheVersion,
       readFileSync('./pnpm-lock.yaml', 'utf8'),
       readFileSync('./package.json', 'utf8'),
-      readFileSync('./tailwind.config.ts', 'utf8'),
       existsSync('./.env') && readFileSync('./.env', 'utf8'),
       existsSync('./.env.local') && readFileSync('./.env.local', 'utf8'),
     ]),
@@ -37,7 +36,10 @@ module.exports = withNativeWind(
     },
   },
   {
-    inlineRem: 16,
-    input: './global.css',
+    cssEntryFile: './global.css',
+    dtsFile: './src/uniwind-types.d.ts',
+    polyfills: {
+      rem: 16,
+    },
   },
 );

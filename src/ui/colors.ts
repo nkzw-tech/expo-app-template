@@ -1,7 +1,7 @@
 const colors = {
   accent: '#7e22ce',
-  screen: '#fff',
-  subtle: '#ededed',
+  background: '#fff',
+  muted: '#ededed',
   text: '#111',
 };
 

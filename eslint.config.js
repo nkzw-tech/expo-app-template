@@ -38,12 +38,6 @@ export default [
         {
           paths: [
             {
-              importNames: ['Text'],
-              message:
-                'Please use the corresponding UI components from `src/ui/` instead.',
-              name: 'react-native',
-            },
-            {
               importNames: ['ScrollView'],
               message:
                 'Please use the corresponding UI component from `react-native-gesture-handler` instead.',
@@ -63,8 +57,8 @@ export default [
         {
           devDependencies: [
             './eslint.config.js',
+            './metro.config.cjs',
             './scripts/**.tsx',
-            './tailwind.config.ts',
             './vitest.config.js',
             '**/*.test.tsx',
           ],

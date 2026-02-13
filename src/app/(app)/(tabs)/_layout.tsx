@@ -29,9 +29,7 @@ export default function TabLayout() {
             <Pressable
               className="mr-2 rounded px-4 py-0"
               onPress={() =>
-                startTransition(() =>
-                  setLocale(locale === 'ja_JP' ? 'en_US' : 'ja_JP'),
-                )
+                startTransition(() => setLocale(locale === 'ja_JP' ? 'en_US' : 'ja_JP'))
               }
             >
               {({ pressed }) => (
@@ -46,11 +44,7 @@ export default function TabLayout() {
             </Pressable>
           ),
           tabBarIcon: ({ focused }: { focused: boolean }) => (
-            <AntDesign
-              color={focused ? colors.accent : colors.text}
-              name="ie"
-              size={24}
-            />
+            <AntDesign color={focused ? colors.accent : colors.text} name="ie" size={24} />
           ),
           title: String(fbs('Home', 'Home tab title')),
         }}
@@ -59,11 +53,7 @@ export default function TabLayout() {
         name="two"
         options={{
           tabBarIcon: ({ focused }: { focused: boolean }) => (
-            <AntDesign
-              color={focused ? colors.accent : colors.text}
-              name="printer"
-              size={24}
-            />
+            <AntDesign color={focused ? colors.accent : colors.text} name="printer" size={24} />
           ),
           title: String(fbs('Two', 'Two tab title')),
         }}

@@ -5,14 +5,7 @@ export default [
   ...nkzw,
   fbtee.configs.strict,
   {
-    ignores: [
-      '__generated__',
-      '.expo',
-      'android/',
-      'dist/',
-      'ios/',
-      'vite.config.ts.timestamp-*',
-    ],
+    ignores: ['__generated__', '.expo', 'android/', 'dist/', 'ios/', 'vite.config.ts.timestamp-*'],
   },
   {
     files: ['scripts/**/*.tsx'],
@@ -45,8 +38,7 @@ export default [
             },
             {
               importNames: ['BottomSheetModal'],
-              message:
-                'Please use the corresponding UI components from `src/ui/` instead.',
+              message: 'Please use the corresponding UI components from `src/ui/` instead.',
               name: '@gorhom/bottom-sheet',
             },
           ],

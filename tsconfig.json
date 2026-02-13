@@ -20,11 +20,5 @@
     "target": "es2022"
   },
   "exclude": ["node_modules"],
-  "include": [
-    ".expo/types/**/*.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "app-env.d.ts",
-    "expo-env.d.ts"
-  ]
+  "include": [".expo/types/**/*.ts", "**/*.ts", "**/*.tsx", "app-env.d.ts", "expo-env.d.ts"]
 }

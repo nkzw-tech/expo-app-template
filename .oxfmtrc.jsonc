@@ -1,0 +1,30 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "singleQuote": true,
+  "experimentalSortImports": {
+    "newlinesBetween": false,
+  },
+  "experimentalSortPackageJson": {
+    "sortScripts": true,
+  },
+  "experimentalTailwindcss": {
+    "stylesheet": "global.css",
+  },
+  "ignorePatterns": [
+    "__generated__/",
+    ".enum_manifest.json",
+    ".expo/",
+    ".source_strings.json",
+    ".src_manifest.json",
+    "android/",
+    "coverage/",
+    "dist/",
+    "index.html",
+    "ios/",
+    "patches/",
+    "pnpm-lock.yaml",
+    "web-build/",
+    "src/__generated__/",
+    "src/translations/",
+  ],
+}

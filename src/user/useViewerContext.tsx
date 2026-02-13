@@ -14,9 +14,7 @@ type ViewerContext = Readonly<{
 const [ViewerContext, useViewerContext] = createContextHook(() => {
   const router = useRouter();
 
-  const [viewerContext, setViewerContext] = useState<ViewerContext | null>(
-    null,
-  );
+  const [viewerContext, setViewerContext] = useState<ViewerContext | null>(null);
 
   const user = viewerContext?.user;
 

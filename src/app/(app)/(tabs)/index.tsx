@@ -7,11 +7,9 @@ import { cx } from '../../../lib/cx.tsx';
 export default function Index() {
   return (
     <>
-      <ExpoStack.Screen
-        options={{ title: String(fbs('Home', 'Home header title')) }}
-      />
+      <ExpoStack.Screen options={{ title: String(fbs('Home', 'Home header title')) }} />
       <VStack alignCenter center flex1 gap={16} padding>
-        <Text className="text-accent text-center text-xl font-bold">
+        <Text className="text-center text-xl font-bold text-accent">
           <fbt desc="Greeting">Welcome</fbt>
         </Text>
         <Text className="text-center italic">

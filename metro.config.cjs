@@ -31,8 +31,7 @@ module.exports = withUniwindConfig(
     },
     transformer: {
       ...config.transformer,
-      babelTransformerPath:
-        require.resolve('react-native-svg-transformer/expo'),
+      babelTransformerPath: require.resolve('react-native-svg-transformer/expo'),
     },
   },
   {

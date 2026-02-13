@@ -1,6 +1,5 @@
 {
   "recommendations": [
-    "dbaeumer.vscode-eslint",
     "oxc.oxc-vscode",
     "sysoev.vscode-open-in-github",
     "usernamehw.errorlens",

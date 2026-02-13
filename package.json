@@ -60,7 +60,6 @@
   },
   "devDependencies": {
     "@nkzw/babel-preset-fbtee": "^1.7.1",
-    "@nkzw/eslint-config": "^3.3.0",
     "@nkzw/eslint-plugin": "^2.0.0",
     "@nkzw/eslint-plugin-fbtee": "^1.7.1",
     "@nkzw/oxlint-config": "^1.0.1",
@@ -68,7 +67,6 @@
     "@types/react": "^19.2.9",
     "@typescript/native-preview": "7.0.0-dev.20260122.4",
     "@vitejs/plugin-react": "^5.1.2",
-    "eslint": "^9.39.2",
     "eslint-plugin-no-only-tests": "^3.3.0",
     "eslint-plugin-perfectionist": "^5.5.0",
     "eslint-plugin-react-hooks": "^7.0.1",

@@ -4,7 +4,6 @@ import { defineConfig } from 'oxlint';
 export default defineConfig({
   extends: [nkzw],
   ignorePatterns: [
-    '__generated__/',
     '.expo/',
     'android/',
     'coverage/',

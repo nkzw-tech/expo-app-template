@@ -1,6 +1,5 @@
 .DS_Store
 .env.local
-.eslintcache
 .expo/
 .idea
 .metro-health-check*

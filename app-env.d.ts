@@ -9,3 +9,8 @@ declare module '*.svg' {
   const content: FC<SvgProps & { currentColor?: string }>;
   export default content;
 }
+
+declare module '*.css' {
+  const content: string;
+  export default content;
+}

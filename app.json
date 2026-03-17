@@ -22,7 +22,6 @@
       "expo-web-browser"
     ],
     "experiments": {
-      "reactCanary": true,
       "reactCompiler": true,
       "buildCacheProvider": {
         "plugin": "expo-build-disk-cache"
@@ -54,7 +53,6 @@
       "package": "app.nkzw.www",
       "predictiveBackGestureEnabled": true
     },
-    "newArchEnabled": true,
     "extra": {
       "router": {
         "origin": false

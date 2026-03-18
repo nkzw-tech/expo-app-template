@@ -7,12 +7,13 @@
   "scripts": {
     "android": "expo run:android",
     "dev": "expo start",
-    "dev:setup": "vp run fbtee:all",
+    "dev:setup": "vp run relay && vp run fbtee:all",
     "fbtee:all": "vpx fbtee collect --disable-babel-config && vpx fbtee translate",
     "format-graphql": "./scripts/format-graphql-schema.tsx",
     "ios": "expo run:ios --device 'iPhone 17 Pro'",
     "prebuild": "expo prebuild",
     "prepare": "vp config",
+    "relay": "vpx relay-compiler",
     "start": "expo start --dev-client",
     "web": "expo start --web"
   },
@@ -49,6 +50,8 @@
     "react-native-svg": "^15.15.4",
     "react-native-web": "~0.21.2",
     "react-native-worklets": "^0.10.1",
+    "react-relay": "21.0.1",
+    "relay-runtime": "21.0.1",
     "uniwind": "^1.11.0"
   },
   "devDependencies": {
@@ -65,7 +68,9 @@
     "eslint-plugin-perfectionist": "^5.10.1",
     "eslint-plugin-react-hooks": "^7.1.1",
     "expo-build-disk-cache": "^0.8.0",
+    "oxc-transform-relay": "0.147.0",
     "react-native-svg-transformer": "^1.5.3",
+    "relay-compiler": "21.0.1",
     "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2",
     "vite": "catalog:",

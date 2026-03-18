@@ -113,6 +113,12 @@ importers:
       react-native-worklets:
         specifier: ^0.10.1
         version: 0.10.1(@babel/core@7.29.7)(@react-native/metro-config@0.86.3(@babel/core@7.29.7))(react-native@0.86.3(@babel/core@7.29.7)(@react-native/metro-config@0.86.3(@babel/core@7.29.7))(@types/react@19.2.18)(react@19.2.3))(react@19.2.3)
+      react-relay:
+        specifier: 21.0.1
+        version: 21.0.1(react@19.2.3)
+      relay-runtime:
+        specifier: 21.0.1
+        version: 21.0.1
       uniwind:
         specifier: ^1.11.0
         version: 1.11.0(@expo/metro-config@57.0.11(expo@57.0.17)(typescript@7.0.2))(metro-cache@0.87.0)(metro-transform-worker@0.87.0)(metro@0.87.0)(react-native@0.86.3(@babel/core@7.29.7)(@react-native/metro-config@0.86.3(@babel/core@7.29.7))(@types/react@19.2.18)(react@19.2.3))(react@19.2.3)(tailwindcss@4.3.3)
@@ -156,9 +162,15 @@ importers:
       expo-build-disk-cache:
         specifier: ^0.8.0
         version: 0.8.0(typescript@7.0.2)
+      oxc-transform-relay:
+        specifier: 0.147.0
+        version: 0.147.0
       react-native-svg-transformer:
         specifier: ^1.5.3
         version: 1.5.3(react-native-svg@15.15.4(react-native@0.86.3(@babel/core@7.29.7)(@react-native/metro-config@0.86.3(@babel/core@7.29.7))(@types/react@19.2.18)(react@19.2.3))(react@19.2.3))(react-native@0.86.3(@babel/core@7.29.7)(@react-native/metro-config@0.86.3(@babel/core@7.29.7))(@types/react@19.2.18)(react@19.2.3))(typescript@7.0.2)
+      relay-compiler:
+        specifier: 21.0.1
+        version: 21.0.1
       tailwindcss:
         specifier: ^4.3.3
         version: 4.3.3
@@ -1300,6 +1312,128 @@ packages:
 
   '@oxc-project/types@0.146.0':
     resolution: {integrity: sha512-XC0QsnnhVe7sLIWmYmdPw7x5P0h4W8vUU3Nv1ySgWXtvCz8NizoAEpGXA0sOYoJQV2Rl13LgURAHQ5cI5ILCSA==}
+
+  '@oxc-transform-relay/binding-android-arm-eabi@0.147.0':
+    resolution: {integrity: sha512-m7bSVFEVABdM7lNpjLCK8fuU6QzKPfYhWMIMz7lqSmlxMDExb61FhMhX8PRBf247inFnZfe6Aiuq9vtnFx2tkw==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm]
+    os: [android]
+
+  '@oxc-transform-relay/binding-android-arm64@0.147.0':
+    resolution: {integrity: sha512-JIoNQF5xi5KHBHRYMd6KLX8N5fooJjplAqDTgLcwkWpdm00gHFqrcQdsNbeWrF2GJzYj5TSB6yMln+0fObI5yA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [android]
+
+  '@oxc-transform-relay/binding-darwin-arm64@0.147.0':
+    resolution: {integrity: sha512-l20sXcd5cDPx+UzzBXidn+nXk9QKaOccOquNgYXMzTugI0R6rQsKpV+DX/tnUgFYoK/yrK9mfyR5N1uEz5In3g==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@oxc-transform-relay/binding-darwin-x64@0.147.0':
+    resolution: {integrity: sha512-o2bv8maHQln001E5pvQb0dasqVgayhuxU1Bba6zCTicNNvSRGp0qU8a2KyDHkRQ+iTKMTZodVuOnsS3ZG6rm8A==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [darwin]
+
+  '@oxc-transform-relay/binding-freebsd-x64@0.147.0':
+    resolution: {integrity: sha512-DhBLYN+RWH/fVcv8V8VCGmVDQRMvV9qrqXD/1IHXst7Jl7wN7GqNU4gQBDPy1RzXyTjB6bGHFz+k+xmylCMKFA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [freebsd]
+
+  '@oxc-transform-relay/binding-linux-arm-gnueabihf@0.147.0':
+    resolution: {integrity: sha512-HoqQbtfD1Mm3DOcodRy/IgVXYzHEvtEpNP8Rki+MS6KA6H+LnY7eKDI83L5C1Y5x53R+6ITVsvQ/1XckYGi7jg==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm]
+    os: [linux]
+
+  '@oxc-transform-relay/binding-linux-arm-musleabihf@0.147.0':
+    resolution: {integrity: sha512-3loAjTEQWE/PT213ypTX2Bmu75fobioo+xc2C7YXStT/GMNbnCWMMJAHAa2LzLFIARl2IUY87ONOm4/d5HR2Qg==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm]
+    os: [linux]
+
+  '@oxc-transform-relay/binding-linux-arm64-gnu@0.147.0':
+    resolution: {integrity: sha512-CQDpjy87/LH3EE8r4jkJi1ew5mBweONilKHAMID4NZor1YvO2ji0kwQrHQvEamECUmzHI97BbFRRsvo9jNKEeg==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [linux]
+    libc: [glibc]
+
+  '@oxc-transform-relay/binding-linux-arm64-musl@0.147.0':
+    resolution: {integrity: sha512-rRSSng8n1WqEQ52BAYSeJ/B7YZue+w2roRNouq/bK7KsAiiaRBNDbtCFvGElEIU3gUBFp7x72WCf4q3R/stPBQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [linux]
+    libc: [musl]
+
+  '@oxc-transform-relay/binding-linux-ppc64-gnu@0.147.0':
+    resolution: {integrity: sha512-OLiLiY0Sbja8gX/DR0247jtjIi61QsMLOIKG630grxsj9dH4wpNYU41XrvV4JA8XIOANu8OiiWKPmYdoFs4hOg==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [ppc64]
+    os: [linux]
+    libc: [glibc]
+
+  '@oxc-transform-relay/binding-linux-riscv64-gnu@0.147.0':
+    resolution: {integrity: sha512-V3WLOvOMrpNoJmUgNjGoZm6qbt+VWLvJFvWde8eJ/h2W3wQFx8L1q4y441MVb9u1dRuB7armBWxDeJdrFFxe3Q==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [riscv64]
+    os: [linux]
+    libc: [glibc]
+
+  '@oxc-transform-relay/binding-linux-riscv64-musl@0.147.0':
+    resolution: {integrity: sha512-uEcGDsqTR4I6ek/+kwqL3WtoMpW1LDTSVhq+jdthIyPifBCTFlghj6wWlIppQnmnzVxR25H+j25rjxA3Hdx7tA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [riscv64]
+    os: [linux]
+    libc: [musl]
+
+  '@oxc-transform-relay/binding-linux-s390x-gnu@0.147.0':
+    resolution: {integrity: sha512-GyzI3+i7ah7SGYHXLvnHINtlylgEhh6prUWxA2fg1keNsZVaKSWGDxCKNH7f/WYl33I4a/0xgcqoG9PxceZR0A==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [s390x]
+    os: [linux]
+    libc: [glibc]
+
+  '@oxc-transform-relay/binding-linux-x64-gnu@0.147.0':
+    resolution: {integrity: sha512-OPEHvWVsd4lljMe04L+Y/h53XbO0JcS6GYh6NZfvcqKPHHhRjeaMhThqvcSOWRQSU+eg5bGrOewkBTVOGNfI9g==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [linux]
+    libc: [glibc]
+
+  '@oxc-transform-relay/binding-linux-x64-musl@0.147.0':
+    resolution: {integrity: sha512-P8aNkmOxut4JN8yKQADdQoLUtt5e0S2+Ccm40YLTWVAb9bFjWL7rN5N1bRMURk4N7rFe7im3RzsfMeLpYaCWhw==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [linux]
+    libc: [musl]
+
+  '@oxc-transform-relay/binding-openharmony-arm64@0.147.0':
+    resolution: {integrity: sha512-o455D61cfllQvCJ1DjQZm3GRRqpNH7k9rHmwMRbQKsydgLpbey5G8LyrqErPi02fxCBuTz1ZnCGqN6iRrUvihQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [openharmony]
+
+  '@oxc-transform-relay/binding-win32-arm64-msvc@0.147.0':
+    resolution: {integrity: sha512-7PQx+QHu39YaA9/GUnJXpxlQju5+3ltwCCiBipHYhSEk0H8pr5D6SyY8lkyNIYQYZFjAuXsqoSTNBOUQwUS1TQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [win32]
+
+  '@oxc-transform-relay/binding-win32-ia32-msvc@0.147.0':
+    resolution: {integrity: sha512-JkxWLQyfuVxz4TSqVGFi5RybMrSRAqPsZAQ7qBtdd4dO65i7RLblhcQb9XFpVljYupBJZSmywVa/7T5ACE1d5A==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [ia32]
+    os: [win32]
+
+  '@oxc-transform-relay/binding-win32-x64-msvc@0.147.0':
+    resolution: {integrity: sha512-MQg3gXHxwSwzZY7KhT5V9urhawab23GKCp5T5a5ZxtxsD8zr6DJVv8JpbqREs3n0EMCW6sIYTvMK90eIQPDE1w==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [win32]
 
   '@oxfmt/binding-android-arm-eabi@0.64.0':
     resolution: {integrity: sha512-o6uzh/jTOQeAY5TdkAeXdqv7MBRcPxiRA08zrcBtkKj5cSu/FMu0Hl7Q6Fi1KCKyCWZ6lJVjBzdsJvsKltUsGQ==}
@@ -4282,6 +4416,10 @@ packages:
     resolution: {integrity: sha512-eNwHudNbO1folBP3JsZ19v9azXWtQZjICdr3Q0TDPIaeBQ3mXLrh54wM+er0+hSp+dWKf+Z8KM58CYzEyIYxYg==}
     engines: {node: '>=6'}
 
+  oxc-transform-relay@0.147.0:
+    resolution: {integrity: sha512-+6l8+1TYOXRllbZ8zGTDItE0Shx9tk8wbKKsZwch2xL7sraMiYeFnIIc+QSL+kVwUirbXl5G+0xjKbLY46x8Sg==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+
   oxfmt@0.64.0:
     resolution: {integrity: sha512-XZ4GFBN/PLbXKq+0zrgpQfPKYuJlUuj+nzZJY7UpIbFMNyefNLCdN9EwViycNqnYcv0wrn0jXcQLlqJp8RCKBg==}
     engines: {node: ^20.19.0 || >=22.12.0}
@@ -4569,6 +4707,11 @@ packages:
     resolution: {integrity: sha512-jCvmsr+1IUSMUyzOkRcvnVbX3ZYC6g9TDrDbFuFmRDq7PD4yaGbLKNQL6k2jnArV8hjYxh7hVhAZB6s9HDGpZA==}
     engines: {node: '>=0.10.0'}
 
+  react-relay@21.0.1:
+    resolution: {integrity: sha512-08BBmpdolP8vslClnszG+g4vkcbVHvaoR0BDHyhicwpCfbtnVGe73/MfPja/xj30eLWSP5WPYNqZupTdEPZvtw==}
+    peerDependencies:
+      react: ^16.9.0 || ^17 || ^18 || ^19
+
   react-remove-scroll-bar@2.3.8:
     resolution: {integrity: sha512-9r+yi9+mgU33AKcj6IbT9oRCO78WriSj6t/cF8DWBZJ9aOGPOTEDvdUDz1FwKim7QXWwmHqtdHnRJfhAxEG46Q==}
     engines: {node: '>=10'}
@@ -4623,6 +4766,13 @@ packages:
   regjsparser@0.13.2:
     resolution: {integrity: sha512-NgRBy2Nx/bE+9F27nVHnqcN5HjyLmecqsqx2PJHu3/IEtADD4WuxuXIVExD5PoSDFVrl78dOonfcOe5O+5nbzQ==}
     hasBin: true
+
+  relay-compiler@21.0.1:
+    resolution: {integrity: sha512-Wqlg3MtHyBlAYByVo24Wy9H3n2bAw991gPmzdo3XfNv+TzhI8zuGogtiae+7NORI7zhghgZaHC7Sp8S8ZPRYEA==}
+    hasBin: true
+
+  relay-runtime@21.0.1:
+    resolution: {integrity: sha512-OS+We56sp6gkGVEcce9VCNOeg/sMbxT9unEoerQPgNAICHowSWrXNc6LJxF2OqjypxYF7kaLDSPPiaPii2Pw1g==}
 
   require-directory@2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
@@ -6637,6 +6787,63 @@ snapshots:
   '@oxc-project/runtime@0.146.0': {}
 
   '@oxc-project/types@0.146.0': {}
+
+  '@oxc-transform-relay/binding-android-arm-eabi@0.147.0':
+    optional: true
+
+  '@oxc-transform-relay/binding-android-arm64@0.147.0':
+    optional: true
+
+  '@oxc-transform-relay/binding-darwin-arm64@0.147.0':
+    optional: true
+
+  '@oxc-transform-relay/binding-darwin-x64@0.147.0':
+    optional: true
+
+  '@oxc-transform-relay/binding-freebsd-x64@0.147.0':
+    optional: true
+
+  '@oxc-transform-relay/binding-linux-arm-gnueabihf@0.147.0':
+    optional: true
+
+  '@oxc-transform-relay/binding-linux-arm-musleabihf@0.147.0':
+    optional: true
+
+  '@oxc-transform-relay/binding-linux-arm64-gnu@0.147.0':
+    optional: true
+
+  '@oxc-transform-relay/binding-linux-arm64-musl@0.147.0':
+    optional: true
+
+  '@oxc-transform-relay/binding-linux-ppc64-gnu@0.147.0':
+    optional: true
+
+  '@oxc-transform-relay/binding-linux-riscv64-gnu@0.147.0':
+    optional: true
+
+  '@oxc-transform-relay/binding-linux-riscv64-musl@0.147.0':
+    optional: true
+
+  '@oxc-transform-relay/binding-linux-s390x-gnu@0.147.0':
+    optional: true
+
+  '@oxc-transform-relay/binding-linux-x64-gnu@0.147.0':
+    optional: true
+
+  '@oxc-transform-relay/binding-linux-x64-musl@0.147.0':
+    optional: true
+
+  '@oxc-transform-relay/binding-openharmony-arm64@0.147.0':
+    optional: true
+
+  '@oxc-transform-relay/binding-win32-arm64-msvc@0.147.0':
+    optional: true
+
+  '@oxc-transform-relay/binding-win32-ia32-msvc@0.147.0':
+    optional: true
+
+  '@oxc-transform-relay/binding-win32-x64-msvc@0.147.0':
+    optional: true
 
   '@oxfmt/binding-android-arm-eabi@0.64.0':
     optional: true
@@ -9516,6 +9723,28 @@ snapshots:
       strip-ansi: 5.2.0
       wcwidth: 1.0.1
 
+  oxc-transform-relay@0.147.0:
+    optionalDependencies:
+      '@oxc-transform-relay/binding-android-arm-eabi': 0.147.0
+      '@oxc-transform-relay/binding-android-arm64': 0.147.0
+      '@oxc-transform-relay/binding-darwin-arm64': 0.147.0
+      '@oxc-transform-relay/binding-darwin-x64': 0.147.0
+      '@oxc-transform-relay/binding-freebsd-x64': 0.147.0
+      '@oxc-transform-relay/binding-linux-arm-gnueabihf': 0.147.0
+      '@oxc-transform-relay/binding-linux-arm-musleabihf': 0.147.0
+      '@oxc-transform-relay/binding-linux-arm64-gnu': 0.147.0
+      '@oxc-transform-relay/binding-linux-arm64-musl': 0.147.0
+      '@oxc-transform-relay/binding-linux-ppc64-gnu': 0.147.0
+      '@oxc-transform-relay/binding-linux-riscv64-gnu': 0.147.0
+      '@oxc-transform-relay/binding-linux-riscv64-musl': 0.147.0
+      '@oxc-transform-relay/binding-linux-s390x-gnu': 0.147.0
+      '@oxc-transform-relay/binding-linux-x64-gnu': 0.147.0
+      '@oxc-transform-relay/binding-linux-x64-musl': 0.147.0
+      '@oxc-transform-relay/binding-openharmony-arm64': 0.147.0
+      '@oxc-transform-relay/binding-win32-arm64-msvc': 0.147.0
+      '@oxc-transform-relay/binding-win32-ia32-msvc': 0.147.0
+      '@oxc-transform-relay/binding-win32-x64-msvc': 0.147.0
+
   oxfmt@0.64.0(vite-plus@0.3.0(@types/node@26.4.0)(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.0)(jiti@2.7.0)(terser@5.51.0)(typescript@7.0.2)(yaml@2.9.0))(jiti@2.7.0)(terser@5.51.0)(typescript@7.0.2)(yaml@2.9.0)):
     dependencies:
       tinypool: 2.1.0
@@ -9876,6 +10105,17 @@ snapshots:
 
   react-refresh@0.14.2: {}
 
+  react-relay@21.0.1(react@19.2.3):
+    dependencies:
+      '@babel/runtime': 7.29.7
+      fbjs: 3.0.5
+      invariant: 2.2.4
+      nullthrows: 1.1.1
+      react: 19.2.3
+      relay-runtime: 21.0.1
+    transitivePeerDependencies:
+      - encoding
+
   react-remove-scroll-bar@2.3.8(@types/react@19.2.18)(react@19.2.3):
     dependencies:
       react: 19.2.3
@@ -9927,6 +10167,16 @@ snapshots:
   regjsparser@0.13.2:
     dependencies:
       jsesc: 3.1.0
+
+  relay-compiler@21.0.1: {}
+
+  relay-runtime@21.0.1:
+    dependencies:
+      '@babel/runtime': 7.29.7
+      fbjs: 3.0.5
+      invariant: 2.2.4
+    transitivePeerDependencies:
+      - encoding
 
   require-directory@2.1.1: {}
 

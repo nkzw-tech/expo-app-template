@@ -1,9 +1,32 @@
 import nkzw from '@nkzw/oxlint-config';
 import fbtee from '@nkzw/vite-plugin-fbtee';
 import react from '@vitejs/plugin-react';
+import { transformSync as transformRelay } from 'oxc-transform-relay';
 import type { PluginOption } from 'vite';
 import { defineConfig } from 'vite-plus';
 import reactNative from 'vitest-react-native';
+
+const relayPlugin = {
+  enforce: 'pre' as const,
+  name: 'oxc-transform-relay',
+  transform: {
+    filter: {
+      code: /(?:^|[^\w.])graphql\s*`/m,
+      id: { exclude: '**/node_modules/**', include: '**/*.tsx' },
+    },
+    handler(source: string, id: string) {
+      const result = transformRelay(id, source, {
+        lang: 'tsx',
+        language: 'typescript',
+        sourcemap: true,
+      });
+      if (result.errors.length) {
+        throw new Error(result.errors.map(({ message }) => message).join('\n'));
+      }
+      return { code: result.code, map: result.map };
+    },
+  },
+};
 
 export default defineConfig({
   fmt: {
@@ -11,6 +34,7 @@ export default defineConfig({
       stylesheet: 'global.css',
     },
     ignorePatterns: [
+      '**/__generated__/**',
       '.enum_manifest.json',
       '.expo/',
       '.source_strings.json',
@@ -37,6 +61,7 @@ export default defineConfig({
   lint: {
     extends: [nkzw],
     ignorePatterns: [
+      '**/__generated__/**',
       '.expo/',
       'android/',
       'coverage/',
@@ -49,7 +74,7 @@ export default defineConfig({
     ],
     options: { typeAware: true, typeCheck: true },
   },
-  plugins: [fbtee(), (reactNative as unknown as () => PluginOption)(), react()],
+  plugins: [relayPlugin, fbtee(), (reactNative as unknown as () => PluginOption)(), react()],
   run: {
     tasks: {
       'test:all': {

@@ -7,19 +7,13 @@
   "scripts": {
     "android": "expo run:android",
     "dev": "expo start",
-    "dev:setup": "pnpm fbtee:all",
-    "fbtee:all": "pnpm fbtee collect && pnpm fbtee translate",
-    "format": "oxfmt --write .",
+    "dev:setup": "vp run fbtee:all",
+    "fbtee:all": "vpx fbtee collect && vpx fbtee translate",
     "format-graphql": "./scripts/format-graphql-schema.tsx",
     "ios": "expo run:ios --device 'iPhone 17 Pro'",
-    "lint": "oxlint .",
-    "lint:format": "oxfmt --check .",
     "prebuild": "expo prebuild",
-    "preinstall": "command -v git >/dev/null 2>&1 && git config core.hooksPath git-hooks || exit 0",
+    "prepare": "vp config",
     "start": "expo start --dev-client",
-    "test": "NODE_OPTIONS='--no-experimental-detect-module' npm-run-all --parallel tsc:check vitest:run lint lint:format",
-    "tsc:check": "tsgo",
-    "vitest:run": "vitest run",
     "web": "expo start --web"
   },
   "dependencies": {
@@ -62,6 +56,7 @@
     "@nkzw/eslint-plugin": "^2.0.0",
     "@nkzw/eslint-plugin-fbtee": "^1.7.3",
     "@nkzw/oxlint-config": "^1.0.1",
+    "@rolldown/plugin-babel": "^0.2.1",
     "@types/react": "^19.2.14",
     "@typescript/native-preview": "7.0.0-dev.20260317.1",
     "@vitejs/plugin-react": "^6.0.1",
@@ -70,15 +65,12 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-unused-imports": "^4.4.1",
     "expo-build-disk-cache": "^0.7.3",
-    "npm-run-all2": "^8.0.4",
-    "oxfmt": "^0.41.0",
-    "oxlint": "^1.56.0",
     "react-native-svg-transformer": "^1.5.3",
     "tailwindcss": "^4.2.1",
     "typescript": "^5.9.3",
-    "vite": "^8.0.0",
-    "vite-plugin-babel": "^1.5.1",
-    "vitest": "^4.1.0",
+    "vite": "catalog:",
+    "vite-plus": "catalog:",
     "vitest-react-native": "^0.1.5"
-  }
+  },
+  "packageManager": "pnpm@10.32.1"
 }

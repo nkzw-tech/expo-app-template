@@ -16,7 +16,7 @@ You have to make a lot of decisions and install tons of packages every time you 
 - [TypeScript](https://www.typescriptlang.org)
 - [React Compiler](https://react.dev/learn/react-compiler)
 - [`@gorhom/bottom-sheet`](https://github.com/gorhom/react-native-bottom-sheet), [Legend List](https://github.com/LegendApp/legend-list), [`react-native-svg`](https://github.com/software-mansion/react-native-svg) (+ `react-native-svg-transformer`).
-- [pnpm](https://pnpm.io/)
+- [Vite+](https://viteplus.dev/)
 - **ESM:** _It's 2025._ This template comes with `"type": "module"`.
 - _(Optional)_ [Relay](https://relay.dev/) for data fetching -> check out the [`with-relay` branch](https://github.com/nkzw-tech/expo-app-template/tree/with-relay).
 
@@ -30,11 +30,11 @@ After you created your repo, you can freely modify anything in this template.
 
 ### Prerequisites
 
-You'll need Node.js 24, pnpm 10+ and Cocoapods.
+You'll need Node.js 24, [Vite+](https://viteplus.dev/) and Cocoapods.
 
 ```bash
-
-brew install node pnpm cocoapods
+curl -fsSL https://vite.plus | bash
+brew install cocoapods
 ```
 
 For building and running apps locally, follow the [Expo setup guides](https://docs.expo.dev/get-started/set-up-your-environment/?platform=ios&device=simulated).
@@ -44,14 +44,14 @@ For building and running apps locally, follow the [Expo setup guides](https://do
 Run:
 
 ```bash
-pnpm install && pnpm dev:setup
+vp install && vp run dev:setup
 ```
 
 ### Running the iOS App in a simulator
 
 ```bash
-pnpm prebuild
-pnpm ios
+vp run prebuild
+vp run ios
 ```
 
 If you already have the app installed on your simulator, you can skip the above steps and simply run `pnpm dev` to start the development server.

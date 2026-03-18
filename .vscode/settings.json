@@ -24,5 +24,7 @@
   "search.exclude": {
     "android/app/build/**": true,
     "ios/DerivedData/**": true
-  }
+  },
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "editor.formatOnSaveMode": "file"
 }

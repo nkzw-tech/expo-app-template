@@ -11,6 +11,7 @@ export default defineConfig({
       stylesheet: 'global.css',
     },
     ignorePatterns: [
+      '**/__generated__/**',
       '.enum_manifest.json',
       '.expo/',
       '.source_strings.json',
@@ -36,6 +37,7 @@ export default defineConfig({
   lint: {
     extends: [nkzw],
     ignorePatterns: [
+      '**/__generated__/**',
       '.expo/',
       'android/',
       'coverage/',

@@ -24,7 +24,13 @@
     "experiments": {
       "reactCompiler": true,
       "buildCacheProvider": {
-        "plugin": "expo-build-disk-cache"
+        "plugin": "expo-build-disk-cache",
+        "options": {
+          "cacheDir": "node_modules/.cache/expo-build-disk-cache",
+          "cacheGcTimeDays": 7,
+          "debug": false,
+          "enable": true
+        }
       },
       "tsconfigPaths": true,
       "typedRoutes": true

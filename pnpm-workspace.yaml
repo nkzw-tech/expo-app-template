@@ -1,22 +1,16 @@
-ignorePatchFailures: false
-
 onlyBuiltDependencies:
   - esbuild
   - react-native-nitro-modules
   - unrs-resolver
 catalog:
-  vite: npm:@voidzero-dev/vite-plus-core@latest
-  vitest: npm:@voidzero-dev/vite-plus-test@latest
-  vite-plus: latest
+  vite: npm:@voidzero-dev/vite-plus-core@0.3.0
+  vite-plus: 0.3.0
 overrides:
   vite: 'catalog:'
-  vitest: 'catalog:'
 peerDependencyRules:
   allowAny:
     - vite
-    - vitest
   allowedVersions:
     vite: '*'
-    vitest: '*'
 allowBuilds:
   esbuild: true

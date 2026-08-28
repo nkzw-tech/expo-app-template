@@ -1,6 +1,5 @@
-import fbteePreset from '@nkzw/babel-preset-fbtee';
 import nkzw from '@nkzw/oxlint-config';
-import babel from '@rolldown/plugin-babel';
+import fbtee from '@nkzw/vite-plugin-fbtee';
 import react from '@vitejs/plugin-react';
 import type { PluginOption } from 'vite';
 import { defineConfig } from 'vite-plus';
@@ -25,6 +24,7 @@ export default defineConfig({
       'pnpm-lock.yaml',
       'web-build/',
       'src/translations/',
+      'src/uniwind-types.d.ts',
     ],
     singleQuote: true,
     sortImports: {
@@ -43,18 +43,13 @@ export default defineConfig({
       'dist/',
       'ios/',
       'metro.config.cjs',
+      'metro.transformer.cjs',
       'vite.config.ts.timestamp-*',
       'web-build/',
     ],
     options: { typeAware: true, typeCheck: true },
   },
-  plugins: [
-    babel({
-      presets: [fbteePreset],
-    }),
-    (reactNative as unknown as () => PluginOption)(),
-    react(),
-  ],
+  plugins: [fbtee(), (reactNative as unknown as () => PluginOption)(), react()],
   run: {
     tasks: {
       'test:all': {

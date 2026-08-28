@@ -1,8 +1,6 @@
-import Stack from '@nkzw/stack';
 import { useRouter } from 'expo-router';
 import { useCallback } from 'react';
-import { Text } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { Text, View } from 'react-native';
 import useViewerContext from '../user/useViewerContext.tsx';
 
 export default function Login() {
@@ -15,12 +13,10 @@ export default function Login() {
   }, [login, router]);
 
   return (
-    <SafeAreaView className="flex-1">
-      <Stack alignCenter center className="!basis-full" flex1 padding={16}>
-        <Text className="w-full text-center text-lg" onPress={onPress}>
-          <fbt desc="Login button">Login</fbt>
-        </Text>
-      </Stack>
-    </SafeAreaView>
+    <View className="flex-1 items-center justify-center p-4">
+      <Text className="w-full text-center text-lg" onPress={onPress}>
+        <fbt desc="Login button">Login</fbt>
+      </Text>
+    </View>
   );
 }

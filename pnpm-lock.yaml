@@ -133,8 +133,8 @@ importers:
         specifier: 3.1.0
         version: 3.1.0
       '@nkzw/oxlint-config':
-        specifier: ^2.0.0
-        version: 2.0.0(eslint@9.39.2(jiti@2.7.0))(oxlint@1.79.0(oxlint-tsgolint@7.0.2001)(vite-plus@0.3.0(@types/node@26.4.0)(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.0)(jiti@2.7.0)(terser@5.51.0)(typescript@7.0.2)(yaml@2.9.0))(jiti@2.7.0)(terser@5.51.0)(typescript@7.0.2)(yaml@2.9.0)))(typescript@7.0.2)
+        specifier: ^2.0.1
+        version: 2.0.1(eslint@9.39.2(jiti@2.7.0))(oxlint@1.79.0(oxlint-tsgolint@7.0.2001)(vite-plus@0.3.0(@types/node@26.4.0)(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.0)(jiti@2.7.0)(terser@5.51.0)(typescript@7.0.2)(yaml@2.9.0))(jiti@2.7.0)(terser@5.51.0)(typescript@7.0.2)(yaml@2.9.0)))(typescript@7.0.2)
       '@nkzw/vite-plugin-fbtee':
         specifier: 3.1.0
         version: 3.1.0(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.0)(jiti@2.7.0)(terser@5.51.0)(typescript@7.0.2)(yaml@2.9.0))
@@ -144,15 +144,6 @@ importers:
       '@vitejs/plugin-react':
         specifier: ^6.1.0
         version: 6.1.0(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.0)(jiti@2.7.0)(terser@5.51.0)(typescript@7.0.2)(yaml@2.9.0))(babel-plugin-react-compiler@1.0.0)
-      eslint-plugin-no-only-tests:
-        specifier: ^3.4.0
-        version: 3.4.0
-      eslint-plugin-perfectionist:
-        specifier: ^5.10.1
-        version: 5.10.1(eslint@9.39.2(jiti@2.7.0))(typescript@7.0.2)
-      eslint-plugin-react-hooks:
-        specifier: ^7.1.1
-        version: 7.1.1(eslint@9.39.2(jiti@2.7.0))
       expo-build-disk-cache:
         specifier: ^0.8.0
         version: 0.8.0(typescript@7.0.2)
@@ -1271,8 +1262,8 @@ packages:
     resolution: {integrity: sha512-m17PXKBGka1fftyilwlTR4B2hlSqRBWf9nwBfFifxWH74mK6IooCFVtvpe/nz+vkqxbER+HRIwtvjFWeZ8syrA==}
     engines: {node: '>=22.12.0'}
 
-  '@nkzw/oxlint-config@2.0.0':
-    resolution: {integrity: sha512-3d+V1gutK+TkbhsOGtaYfuL/3G2hbDYcR4DbIh7rdDLhdg7cmfFy59MWR4Q5poczgWoSXgGRJ9+Fk2C3DYj3oQ==}
+  '@nkzw/oxlint-config@2.0.1':
+    resolution: {integrity: sha512-TgQjl5adJlTg10EU8WmvS78Ce7q+Un59Wyd6lq62Vg/pM8GLa2SEuG3koCziDm+pXJ2d+qkuQgcZ0Ton883yBg==}
     peerDependencies:
       oxlint: '>=1.79.0'
 
@@ -3111,12 +3102,6 @@ packages:
     peerDependencies:
       eslint: ^8.45.0 || ^9.0.0 || ^10.0.0
 
-  eslint-plugin-react-hooks@7.1.1:
-    resolution: {integrity: sha512-f2I7Gw6JbvCexzIInuSbZpfdQ44D7iqdWX01FKLvrPgqxoE7oMj8clOfto8U6vYiz4yd5oKu39rRSVOe1zRu0g==}
-    engines: {node: '>=18'}
-    peerDependencies:
-      eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0 || ^10.0.0
-
   eslint-scope@8.4.0:
     resolution: {integrity: sha512-sNXOfKCn74rt8RICKMvJS7XKV/Xk9kA7DyJr8mJik3S7Cwgy3qlkkmyS2uQB3jiJg6VNdZd/pDBJu0nvG2NlTg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -3526,9 +3511,6 @@ packages:
   hermes-compiler@250829098.0.17:
     resolution: {integrity: sha512-qG1PXzTEtriF6oQLZF3vyHhSMxOdW5h2TqqLri0rdpstPustd2fSvRZQMVAPdlhgFwBfYnj3OUZtiO6LjYsEFw==}
 
-  hermes-estree@0.25.1:
-    resolution: {integrity: sha512-0wUoCcLp+5Ev5pDW2OriHC2MJCbwLwuRx+gAqMTOkGKJJiBCLjtrvy4PWUGn6MIVefecRpzoOZ/UV6iGdOr+Cw==}
-
   hermes-estree@0.35.0:
     resolution: {integrity: sha512-xVx5Opwy8Oo1I5yGpVRhCvWL/iV3M+ylksSKVNlxxD90cpDpR/AR1jLYqK8HWihm065a6UI3HeyAmYzwS8NOOg==}
 
@@ -3537,9 +3519,6 @@ packages:
 
   hermes-estree@0.36.1:
     resolution: {integrity: sha512-guv1nQ6IJ7S83NRFPWc3SA7IBZrdNC9kapwOq6uXvF4wP+sDCgjzQbKPCoyYmoyZRzztF/n/c36l/rccCZSiCw==}
-
-  hermes-parser@0.25.1:
-    resolution: {integrity: sha512-6pEjquH3rqaI6cYAXYPcz9MS4rY6R4ngRgrgfDshRptUZIc3lw0MCIJIGDj9++mfySOuPTHB4nrSW99BCvOPIA==}
 
   hermes-parser@0.35.0:
     resolution: {integrity: sha512-9JLjeHxBx8T4CAsydZR49PNZUaix+WpQJwu9p2010lu+7Kwl6D/7wYFFJxoz+aXkaaClp9Zfg6W6/zVlSJORaA==}
@@ -5240,17 +5219,8 @@ packages:
   yuku-parser@0.5.48:
     resolution: {integrity: sha512-OWBfhrpgK9+/4+IXG9oT8Bao4AhViQA7vdyNNH7EUg8dQYgwa70XtIBWTpCEme1P1ECyoDNYkn0wT63f8XRcVA==}
 
-  zod-validation-error@4.0.2:
-    resolution: {integrity: sha512-Q6/nZLe6jxuU80qb/4uJ4t5v2VEZ44lzQjPDhYJNztRQ4wyWc6VF3D3Kb/fAuPetZQnhS3hnajCf9CsWesghLQ==}
-    engines: {node: '>=18.0.0'}
-    peerDependencies:
-      zod: ^3.25.0 || ^4.0.0
-
   zod@3.25.76:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
-
-  zod@4.4.3:
-    resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
 
 snapshots:
 
@@ -6612,7 +6582,7 @@ snapshots:
       '@nkzw/oxc-transform-fbtee-binding-win32-arm64-msvc': 3.1.0
       '@nkzw/oxc-transform-fbtee-binding-win32-x64-msvc': 3.1.0
 
-  '@nkzw/oxlint-config@2.0.0(eslint@9.39.2(jiti@2.7.0))(oxlint@1.79.0(oxlint-tsgolint@7.0.2001)(vite-plus@0.3.0(@types/node@26.4.0)(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.0)(jiti@2.7.0)(terser@5.51.0)(typescript@7.0.2)(yaml@2.9.0))(jiti@2.7.0)(terser@5.51.0)(typescript@7.0.2)(yaml@2.9.0)))(typescript@7.0.2)':
+  '@nkzw/oxlint-config@2.0.1(eslint@9.39.2(jiti@2.7.0))(oxlint@1.79.0(oxlint-tsgolint@7.0.2001)(vite-plus@0.3.0(@types/node@26.4.0)(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.0)(jiti@2.7.0)(terser@5.51.0)(typescript@7.0.2)(yaml@2.9.0))(jiti@2.7.0)(terser@5.51.0)(typescript@7.0.2)(yaml@2.9.0)))(typescript@7.0.2)':
     dependencies:
       '@nkzw/eslint-plugin': 2.0.0(eslint@9.39.2(jiti@2.7.0))
       eslint-plugin-no-only-tests: 3.4.0
@@ -8183,17 +8153,6 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-react-hooks@7.1.1(eslint@9.39.2(jiti@2.7.0)):
-    dependencies:
-      '@babel/core': 7.29.7
-      '@babel/parser': 7.29.8
-      eslint: 9.39.2(jiti@2.7.0)
-      hermes-parser: 0.25.1
-      zod: 4.4.3
-      zod-validation-error: 4.0.2(zod@4.4.3)
-    transitivePeerDependencies:
-      - supports-color
-
   eslint-scope@8.4.0:
     dependencies:
       esrecurse: 4.3.0
@@ -8658,17 +8617,11 @@ snapshots:
 
   hermes-compiler@250829098.0.17: {}
 
-  hermes-estree@0.25.1: {}
-
   hermes-estree@0.35.0: {}
 
   hermes-estree@0.36.0: {}
 
   hermes-estree@0.36.1: {}
-
-  hermes-parser@0.25.1:
-    dependencies:
-      hermes-estree: 0.25.1
 
   hermes-parser@0.35.0:
     dependencies:
@@ -10534,10 +10487,4 @@ snapshots:
       '@yuku-parser/binding-win32-arm64': 0.5.48
       '@yuku-parser/binding-win32-x64': 0.5.48
 
-  zod-validation-error@4.0.2(zod@4.4.3):
-    dependencies:
-      zod: 4.4.3
-
   zod@3.25.76: {}
-
-  zod@4.4.3: {}

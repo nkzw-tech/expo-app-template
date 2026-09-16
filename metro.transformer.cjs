@@ -5,7 +5,7 @@ const {
 } = require('react-native-svg-transformer');
 
 const upstreamTransformer = getExpoTransformer() || getReactNativeTransformer();
-const fbteeTransformer = import('@nkzw/oxc-transform-fbtee');
+const fbteeTransformer = import('@nkzw/fbtee-compiler');
 
 const getLanguage = (filename) => {
   if (filename.endsWith('.tsx')) {
